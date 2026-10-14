@@ -1,0 +1,338 @@
+:root {
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: #04080f;
+  color: #f0ede8;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Screen-reader-only content (used by the accessible agent list). */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Overview lamp panel: pinned to the top-left, out of document flow ──
+   Without position:fixed the panel takes layout height and pushes the world
+   down (leaving a black band at the top). */
+.apex-overview {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  width: 540px;
+  max-width: 92vw;
+  z-index: 30;
+}
+@media (max-width: 1000px) {
+  .apex-overview {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+  }
+}
+
+/* Agent-node breathing (ReasoningWeb). */
+@keyframes agentPulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.06); }
+}
+
+/* Status-bar hint is hidden on small screens. */
+@media (max-width: 700px) {
+  .sb-hint { display: none; }
+}
+
+/* ── APEX Stage 2 chat ─────────────────────────────────────────────── */
+.apex-chat-panel {
+  position: absolute;
+  left: clamp(16px, 3vw, 42px);
+  bottom: clamp(28px, 5vh, 56px);
+  width: min(430px, calc(100vw - 32px));
+  z-index: 25;
+  border: 1px solid rgba(0, 229, 255, 0.20);
+  border-radius: 14px;
+  background: rgba(3, 10, 18, 0.72);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 14px 44px rgba(0,0,0,.32), inset 0 0 24px rgba(0,229,255,.025);
+  overflow: hidden;
+}
+.apex-chat-header { display:flex; align-items:center; justify-content:space-between; padding:12px 14px; border-bottom:1px solid rgba(0,229,255,.12); }
+.apex-chat-kicker { font: 9px/1 var(--font-mono); letter-spacing:.18em; color:rgba(0,229,255,.62); }
+.apex-chat-title { margin-top:5px; font: 12px/1 var(--font-mono); letter-spacing:.12em; color:rgba(255,255,255,.78); }
+.apex-chat-new, .apex-chat-form button { border:1px solid rgba(0,229,255,.25); background:rgba(0,229,255,.06); color:#9cefff; border-radius:8px; font:10px var(--font-mono); letter-spacing:.12em; padding:7px 10px; cursor:pointer; }
+.apex-chat-new:hover, .apex-chat-form button:hover:not(:disabled) { background:rgba(0,229,255,.13); }
+.apex-chat-messages { max-height:210px; overflow:auto; padding:10px 12px; display:flex; flex-direction:column; gap:9px; }
+.apex-chat-empty { color:rgba(255,255,255,.32); font:10px/1.5 var(--font-mono); padding:5px 2px; }
+.apex-chat-message { display:flex; flex-direction:column; gap:3px; font-size:11px; line-height:1.45; color:rgba(255,255,255,.72); white-space:pre-wrap; overflow-wrap:anywhere; }
+.apex-chat-message.user { align-items:flex-end; text-align:right; }
+.apex-chat-message.user > span:last-child { color:rgba(255,255,255,.82); }
+.apex-chat-role { font:8px var(--font-mono); letter-spacing:.16em; color:rgba(245,166,35,.7); }
+.apex-chat-message.assistant .apex-chat-role { color:rgba(0,229,255,.68); }
+.apex-chat-error { border:1px solid rgba(248,113,113,.25); background:rgba(127,29,29,.14); border-radius:8px; padding:8px; color:#fca5a5; font:9px/1.5 var(--font-mono); }
+.apex-chat-form { display:flex; gap:8px; padding:10px; border-top:1px solid rgba(0,229,255,.10); }
+.apex-chat-form input { min-width:0; flex:1; border:1px solid rgba(255,255,255,.10); outline:none; border-radius:8px; background:rgba(0,0,0,.22); color:#fff; padding:9px 10px; font:11px var(--font-mono); }
+.apex-chat-form input:focus { border-color:rgba(0,229,255,.38); box-shadow:0 0 0 2px rgba(0,229,255,.06); }
+.apex-chat-form input::placeholder { color:rgba(255,255,255,.25); }
+.apex-chat-form button:disabled { opacity:.35; cursor:not-allowed; }
+@media (max-width: 900px) {
+  .apex-chat-panel { bottom: 92px; width:min(430px, calc(100vw - 32px)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .apex-chat-panel, .apex-chat-panel * { transition:none !important; animation:none !important; }
+}
+
+/* ── Stage 3: personality + language HUD ───────────────────────────── */
+.apex-hud-top-right-controls { position:absolute; top:20px; right:clamp(18px,3vw,44px); z-index:26; pointer-events:auto; }
+.apex-language-pill { display:flex; align-items:center; gap:9px; border:1px solid rgba(0,229,255,.22); background:rgba(3,10,18,.58); backdrop-filter:blur(14px); border-radius:999px; padding:7px 11px; box-shadow:0 0 24px rgba(0,229,255,.04); }
+.apex-language-pill span { font:8px var(--font-mono); letter-spacing:.16em; color:rgba(0,229,255,.62); }
+.apex-language-pill select { appearance:none; border:0; outline:0; background:transparent; color:rgba(240,237,232,.9); font:10px var(--font-mono); letter-spacing:.08em; cursor:pointer; }
+.apex-language-pill option { background:#07111f; color:#fff; }
+.apex-personality-panel { position:absolute; top:76px; right:clamp(16px,3vw,42px); width:min(330px,calc(100vw - 32px)); z-index:25; padding:15px; border:1px solid rgba(0,229,255,.20); border-radius:14px; background:rgba(3,10,18,.78); backdrop-filter:blur(18px); box-shadow:0 14px 44px rgba(0,0,0,.32), inset 0 0 24px rgba(0,229,255,.025); }
+.apex-panel-heading { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; padding-bottom:12px; border-bottom:1px solid rgba(0,229,255,.11); }
+.apex-panel-kicker { font:8px/1 var(--font-mono); letter-spacing:.18em; color:rgba(0,229,255,.55); }
+.apex-panel-title { margin-top:5px; font:12px/1 var(--font-mono); letter-spacing:.12em; color:rgba(255,255,255,.88); }
+.apex-panel-live { font:8px var(--font-mono); letter-spacing:.15em; color:#34d399; border:1px solid rgba(52,211,153,.22); padding:5px 7px; border-radius:999px; }
+.apex-preset-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0 8px; color:rgba(255,255,255,.48); font:8px var(--font-mono); letter-spacing:.14em; }
+.apex-preset-row select { min-width:130px; border:1px solid rgba(0,229,255,.22); border-radius:8px; background:rgba(0,229,255,.05); color:#dffbff; padding:7px 9px; outline:0; font:10px var(--font-mono); }
+.apex-preset-row option { background:#07111f; color:#fff; }
+.apex-equalizer-list { display:flex; flex-direction:column; gap:13px; }
+.apex-equalizer-item { display:block; }
+.apex-equalizer-label-row { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.apex-equalizer-name { display:flex; align-items:center; gap:8px; color:rgba(255,255,255,.78); font:11px var(--font-mono); }
+.apex-personality-glyph { width:16px; text-align:center; color:#00e5ff; text-shadow:0 0 10px rgba(0,229,255,.45); font-size:14px; }
+.glyph-2 { color:#a78bfa; }.glyph-3 { color:#fbbf24; }.glyph-4 { color:#34d399; }
+.apex-equalizer-value { color:rgba(255,255,255,.78); font:10px var(--font-mono); }
+.apex-equalizer-scale { display:flex; justify-content:space-between; margin:3px 0 4px 24px; color:rgba(255,255,255,.30); font:7px var(--font-mono); }
+.apex-equalizer-item input[type=range] { width:100%; accent-color:#00e5ff; cursor:pointer; }
+.apex-personality-note { margin-top:13px; padding-top:10px; border-top:1px solid rgba(0,229,255,.09); color:rgba(0,229,255,.52); font:8px var(--font-mono); letter-spacing:.12em; }
+.apex-personality-note.custom { color:rgba(245,166,35,.72); }
+@media (max-width: 1000px) { .apex-personality-panel { width:min(310px,calc(100vw - 32px)); } .apex-hud-top-right-controls { top:12px; } }
+@media (max-width: 760px) { .apex-personality-panel { top:58px; max-height:48vh; overflow:auto; } .apex-chat-panel { left:16px; right:16px; width:auto; } }
+@media (prefers-reduced-motion: reduce) { .apex-personality-panel, .apex-personality-panel * { transition:none !important; animation:none !important; } }
+
+/* Stage 4: local workspace. The orb art and licenses remain from the original. */
+body { color:#EEF5FF; background:#081827; }
+button, input, textarea, select { font:inherit; }
+button { cursor:pointer; }
+button:disabled { opacity:.45; cursor:not-allowed; }
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, summary:focus-visible { outline:2px solid #22D3EE; outline-offset:3px; }
+.apex-world { position:relative; height:100dvh; min-height:760px; overflow:hidden; background:radial-gradient(ellipse at 50% 44%,#13334d,#081827 66%,#050d18); }
+.world-waves { position:absolute; inset:0; opacity:.8; pointer-events:none; }
+.apex-header { position:absolute; top:24px; left:32px; right:32px; display:flex; justify-content:space-between; align-items:center; z-index:30; gap:16px; }
+.apex-header h1 { margin:8px 0 0; font-size:32px; letter-spacing:.2em; font-weight:500; }
+.apex-version { font:10px var(--font-mono); letter-spacing:.12em; margin-left:18px; color:#91b0c9; }
+.work-kicker { font:10px var(--font-mono); letter-spacing:.16em; color:#69daec; margin:0 0 8px; }
+.runtime-pill { display:flex; align-items:center; gap:8px; flex-wrap:wrap; max-width:330px; border:1px solid #22D3EE40; background:#081827b3; padding:12px 16px; border-radius:14px 0; font-size:12px; }
+.runtime-pill small { flex-basis:100%; margin-left:15px; color:#aec4d8; font-size:11px; }
+.runtime-dot { width:7px; height:7px; border-radius:50%; background:#f87171; flex-shrink:0; }
+.runtime-dot.connected { background:#34d399; box-shadow:0 0 12px #34d39966; }
+.workspace-nav { position:absolute; top:108px; left:32px; right:32px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; z-index:32; }
+.workspace-nav button, .workspace-body button, .workspace-shell-header button, .agent-inspector button { border:1px solid #22D3EE50; color:#dceeff; background:#0b2334; padding:10px 14px; border-radius:12px 0; font-size:12px; transition:border-color .2s,box-shadow .2s; }
+.workspace-nav button:hover, .workspace-nav button[aria-pressed=true], .workspace-body button:hover:not(:disabled), .workspace-shell-header button:hover { border-color:#22D3EE; box-shadow:0 0 14px #22D3EE20; }
+.nav-language { margin-left:auto; }
+.nav-language select, .agent-picker select { color:#EEF5FF; background:#0b2334; border:1px solid #22D3EE50; padding:9px; border-radius:12px 0; }
+.nav-motion { font-size:12px; color:#bdcfe0; display:flex; align-items:center; gap:4px; }
+.runtime-warning { position:absolute; top:165px; left:32px; right:32px; z-index:30; color:#ffc7ba; font-size:12px; pointer-events:none; }
+.world-graph { position:absolute; inset:180px 40px 150px; pointer-events:none; }
+.world-orb { position:absolute; left:50%; top:50%; width:min(560px,55vw); height:min(500px,48vw); transform:translate(-50%,-50%); pointer-events:none; }
+.world-activity { position:absolute; top:65%; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; text-align:center; gap:6px; font:10px var(--font-mono); letter-spacing:.12em; color:#9bddf0; pointer-events:none; }
+.agent-picker { position:absolute; right:32px; bottom:32px; z-index:30; }
+.world-status { position:absolute; left:32%; right:20%; height:145px; bottom:0; pointer-events:none; }
+.apex-chat-panel { position:absolute; left:32px; bottom:32px; width:min(410px,32vw); border-radius:18px 0; background:#061422eb; user-select:text; }
+.apex-chat-messages { height:240px; max-height:32vh; font-size:14px; }
+.apex-chat-message { font-size:13px; color:#d9e7f5; }
+.apex-chat-empty { color:#a9bfce; font:12px/1.6 var(--font-mono); }
+.apex-chat-role { font-size:9px; }
+.apex-chat-title { font-size:11px; }
+.apex-chat-form input { font-size:13px; border-radius:12px 0; }
+.apex-chat-form button { background:#F2CC77; color:#142331; border-radius:12px 0; }
+.chat-timing { padding:4px 12px; font:10px var(--font-mono); color:#9fb7cb; }
+.personality-wrap .apex-personality-panel { top:176px; right:32px; border-radius:18px 0; z-index:40; max-height:calc(100% - 210px); overflow:auto; }
+.apex-equalizer-scale { font-size:9px; color:#a6becc; }
+.apex-panel-kicker, .apex-preset-row { color:#9bc5d2; }
+.workspace-shell { position:absolute; right:32px; top:168px; bottom:32px; width:min(780px,calc(64vw - 64px)); background:#061522f5; border:1px solid #22D3EE70; border-radius:22px 0; z-index:35; display:flex; flex-direction:column; overflow:hidden; box-shadow:0 20px 80px #0008; user-select:text; }
+.workspace-shell-header { display:flex; justify-content:space-between; align-items:center; padding:14px 20px; border-bottom:1px solid #22D3EE35; flex-shrink:0; font:10px var(--font-mono); letter-spacing:.1em; }
+.workspace-body { overflow:auto; padding:24px; flex:1; min-height:0; }
+.workspace-body h2, .agent-inspector h2 { font-size:24px; font-weight:400; margin:8px 0 12px; letter-spacing:-.03em; }
+.work-muted { color:#a5bdd0; font-size:12px; line-height:1.6; }
+.work-row { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.work-row strong { font-size:14px; overflow-wrap:anywhere; }
+.work-field { display:flex; flex-direction:column; gap:8px; margin:16px 0; color:#d8e7f4; font-size:12px; }
+.work-field input, .work-field textarea, .work-field select { width:100%; background:#091e30; border:1px solid #22D3EE40; border-radius:12px 0; color:#EEF5FF; padding:12px; min-width:0; }
+.work-field textarea { resize:vertical; line-height:1.6; }
+.work-field input::placeholder, .work-field textarea::placeholder { color:#829caf; }
+.work-actions { display:flex; flex-wrap:wrap; gap:8px; margin:14px 0; }
+.workspace-body button.gold-button { background:#F2CC77; border-color:#F2CC77; color:#122434; font-weight:600; }
+.loop-canvas { padding:20px; border:1px solid #22D3EE25; border-radius:16px 0; background:radial-gradient(ellipse at 50% 50%,#0b293d88,#061521),linear-gradient(90deg,#22d3ee08 1px,transparent 1px); background-size:auto,24px 24px; display:flex; flex-direction:column; align-items:center; margin:22px 0; }
+.loop-node { display:flex; flex-direction:column; width:280px; max-width:100%; gap:7px; border:1px solid #22D3EE60; border-radius:14px 0; padding:14px 20px; color:#EEF5FF; background:#0b2a3c; text-align:left; }
+.workspace-body button.loop-node { width:280px; padding:14px 20px; }
+.loop-node span { font:9px var(--font-mono); color:#6ed9eb; letter-spacing:.15em; }
+.loop-node strong { font-size:14px; font-weight:500; }
+.loop-node small { font-size:11px; color:#b0c9d6; line-height:1.4; }
+.loop-node.selected { box-shadow:0 0 22px #22D3EE22; border-color:#22D3EE; }
+.loop-node.gold { border-color:#F2CC7766; }
+.loop-connector { text-align:center; color:#22D3EE; padding:7px; }
+.work-editor-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.work-list { display:flex; flex-direction:column; gap:14px; margin:24px 0; }
+.work-card { border:1px solid #22D3EE30; padding:16px; border-radius:16px 0; background:#0a2032; }
+.work-card p { overflow-wrap:anywhere; }
+.work-status { display:inline-block; font:10px var(--font-mono); color:#b6c6d8; border:1px solid #667e9366; padding:5px 8px; border-radius:8px 0; white-space:nowrap; }
+.work-status.running { color:#70e7fb; border-color:#22D3EE; }
+.work-status.completed { color:#6ee7b7; border-color:#34d39966; }
+.work-status.failed { color:#fca5a5; border-color:#f8717166; }
+.work-status.awaiting_input, .work-status.cancellation_requested { color:#F2CC77; border-color:#F2CC7766; }
+.work-step-states { display:flex; flex-wrap:wrap; gap:5px; margin:10px 0; }
+.work-result { font:13px/1.7 system-ui; white-space:pre-wrap; overflow-wrap:anywhere; max-height:400px; overflow:auto; }
+.work-card summary { cursor:pointer; color:#F2CC77; font-size:13px; padding:8px 0; }
+.work-error { padding:12px; background:#67242255; border:1px solid #f8717160; color:#ffbcbc; font-size:13px; line-height:1.5; }
+.work-notice { color:#82ebc3; font-size:13px; }
+.agent-inspector { position:absolute; top:180px; left:32px; width:min(360px,calc(100vw - 64px)); max-height:35vh; overflow:auto; z-index:50; background:#081b2af5; border:1px solid #22D3EE80; padding:20px; border-radius:18px 0; user-select:text; }
+.agent-inspector p { line-height:1.6; font-size:13px; }
+.motion-off *, .motion-off *::before, .motion-off *::after { animation:none !important; transition:none !important; }
+@media(max-width:1050px) { .apex-chat-panel { width:34vw; left:20px; } .workspace-shell { right:20px; width:calc(62vw - 40px); } .work-editor-grid { grid-template-columns:1fr; gap:0; } .apex-header,.workspace-nav { left:20px; right:20px; } .apex-version { display:none; } .world-status { left:36%; right:6%; } }
+@media(max-width:700px) { .apex-world { min-height:860px; } .apex-header { top:20px; align-items:flex-start; } .apex-header h1 { font-size:26px; } .apex-header .work-kicker { font-size:8px; max-width:130px; line-height:1.6; } .runtime-pill { padding:8px; font-size:10px; max-width:185px; } .runtime-pill small { font-size:9px; } .workspace-nav { top:115px; gap:5px; } .workspace-nav button { padding:8px; font-size:11px; } .nav-language { margin-left:0; } .runtime-warning { top:208px; left:20px; font-size:11px; } .world-graph { inset:245px 0 300px; } .world-orb { top:42%; width:85vw; height:65vw; } .world-activity { top:54%; font-size:9px; } .world-status { display:none; } .apex-chat-panel { left:16px; right:16px; width:auto; bottom:16px; } .apex-chat-messages { height:170px; max-height:24vh; } .workspace-shell { left:16px; right:16px; top:204px; bottom:300px; width:auto; } .workspace-body { padding:16px; } .workspace-body h2 { font-size:21px; } .work-row { flex-wrap:wrap; } .agent-picker { bottom:298px; right:16px; } .personality-wrap .apex-personality-panel { top:204px; left:16px; right:16px; width:auto; bottom:300px; max-height:none; } .agent-inspector { left:16px; top:204px; width:calc(100vw - 32px); max-height:calc(100% - 510px); } }
+@media(prefers-reduced-motion:reduce) { *, *::before, *::after { animation:none !important; transition:none !important; } }
+
+/* Galaxy background: static sky is retained when motion is off. */
+.apex-world { background:#020610; }
+.galaxy-background { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+
+/* Reference-inspired compact HUD; actual runtime results drive the checklist. */
+.apex-header { top:22px; gap:24px; }
+.apex-header h1 { font-size:22px; margin:5px 0 0; }
+.apex-version { font-size:9px; }
+.hud-clock { margin-left:auto; text-align:right; font:24px var(--font-mono); color:#ccfaff; }
+.hud-clock small { display:block; font-size:8px; letter-spacing:.12em; margin-top:6px; color:#80adba; }
+.workspace-nav { top:96px; }
+.apex-chat-panel { width:min(370px,29vw); background:#03101bdd; border:1px solid #61e9ed30; border-radius:3px; }
+.apex-chat-messages { height:160px; }
+.apex-chat-title { font-size:10px; }
+.voice-controls { display:flex; flex-wrap:wrap; gap:8px; padding:12px; border-top:1px solid #30b8cb30; font-size:10px; }
+.voice-controls button, .system-check-panel button { background:#071b28; color:#c5f6fa; border:1px solid #48ceda55; padding:7px 10px; border-radius:3px; cursor:pointer; }
+.voice-controls button:disabled,.system-check-panel button:disabled { opacity:.5; cursor:default; }
+.voice-controls label { display:flex; align-items:center; gap:5px; }
+.voice-caption { display:block; flex-basis:100%; font:9px var(--font-mono); color:#68bdc9; }
+.voice-consent { font-size:12px; line-height:1.5; }
+.voice-consent button { margin:8px 8px 0 0; }
+.voice-error { color:#ffb3ad; line-height:1.5; }
+.initialize-apex { position:absolute; right:32px; top:48%; z-index:25; background:#042333b8; border:1px solid #45e3e890; color:#bdfcff; padding:18px 28px; letter-spacing:.15em; cursor:pointer; }
+.initialize-apex small { display:block; margin-top:8px; font-size:9px; color:#c6aa73; letter-spacing:.08em; }
+.system-check-panel { position:absolute; right:32px; top:180px; bottom:90px; width:min(370px,29vw); z-index:35; overflow:auto; padding:20px; background:#04131ee8; border:1px solid #46d0dd55; border-radius:3px; }
+.system-check-panel h2 { font:12px var(--font-mono); letter-spacing:.15em; }
+.diagnostic-count { color:#c4f8fa; font:24px var(--font-mono); margin:22px 0; }
+.system-check-panel ol { list-style:none; padding:0; margin:0 0 20px; }
+.system-check-panel li { display:flex; gap:10px; align-items:flex-start; padding:10px 0; border-bottom:1px solid #387b9025; font-size:11px; }
+.system-check-panel li>span { color:#77edd7; font-size:17px; width:14px; }
+.system-check-panel li strong { font-weight:500; color:#ddf5fa; }
+.system-check-panel li small { display:block; font-size:9px; line-height:1.5; color:#7fa1b5; margin-top:4px; }
+.system-check-panel li em { margin-left:auto; font:8px var(--font-mono); color:#77edd7; text-transform:uppercase; }
+.system-check-panel .check-failed>span,.system-check-panel .check-failed em { color:#ffb3ad; }
+.system-check-panel .check-skipped>span,.system-check-panel .check-skipped em { color:#e5bf76; }
+.boot-rings { position:absolute; inset:22%; border-radius:50%; pointer-events:none; opacity:0; }
+.boot-rings i { position:absolute; inset:0; border:1px solid #66f9ff; border-radius:50%; }
+.system-scanning .boot-rings { opacity:1; }
+.system-scanning .boot-rings i { animation:boot-expand 2s ease-out infinite; }
+.system-scanning .boot-rings i:nth-child(2) { animation-delay:.6s; }
+.system-scanning .boot-rings i:nth-child(3) { animation-delay:1.2s; }
+@keyframes boot-expand { from { transform:scale(.8); opacity:.8; } to { transform:scale(2.3); opacity:0; } }
+.motion-off .boot-rings i { animation:none; }
+@media(max-width:1050px) { .system-check-panel { right:20px; width:29vw; padding:14px; } }
+@media(max-width:700px) { .apex-world { min-height:1040px; } .hud-clock { display:none; } .workspace-nav { top:110px; } .apex-header h1 { font-size:22px; } .world-orb { top:38%; } .world-activity { top:49%; } .apex-chat-panel { width:auto; bottom:16px; } .initialize-apex { top:54%; left:50%; right:auto; transform:translateX(-50%); width:220px; padding:12px; } .system-check-panel { top:210px; bottom:420px; left:16px; right:16px; width:auto; } .agent-picker { bottom:395px; } .workspace-shell { bottom:420px; } .apex-chat-messages { height:135px; } }
+
+.system-scanning .world-graph { animation:hud-reveal 1.8s ease-out both; }
+@keyframes hud-reveal { from { opacity:.12; } to { opacity:1; } }
+.motion-off .world-graph { animation:none; }
+/* Clock + local weather: selected location controls both readings and timezone. */
+.location-hud { position:absolute; top:165px; left:32px; z-index:33; display:grid; grid-template-columns:240px minmax(280px,1fr); width:min(680px,calc(100vw - 64px)); background:linear-gradient(120deg,#041420e8,#041420c9); border:1px solid #40cad448; border-radius:18px 0; color:#dff8fd; }
+.location-clock { padding:18px 24px; border-right:1px solid #35d7de25; display:flex; flex-direction:column; gap:7px; }
+.hud-eyebrow { display:flex; align-items:center; gap:7px; font:9px var(--font-mono); letter-spacing:.12em; color:#80d7de; }
+.local-time { font:36px var(--font-mono); letter-spacing:.01em; color:#d7fcff; text-shadow:0 0 18px #52e8ed25; }
+.local-date { font-size:10px; color:#bfd5df; }
+.location-clock small { font:8px var(--font-mono); color:#6a9ba9; }
+.location-weather { padding:18px 22px 12px; min-width:0; }
+.location-weather .hud-eyebrow>span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.location-weather button,.location-picker button { border:1px solid #37cfdd45; background:#092331; color:#c6f5fa; padding:5px 8px; border-radius:8px 0; font-size:10px; }
+.location-weather .hud-eyebrow button { margin-left:auto; }
+.weather-reading { display:flex; align-items:center; gap:14px; padding:8px 0; color:#f2cc77; }
+.weather-reading strong { font:36px var(--font-mono); white-space:nowrap; }
+.weather-reading sup { font-size:17px; margin-left:3px; }
+.weather-reading div { color:#d7ebf6; font-size:11px; line-height:1.8; }
+.weather-reading small { display:block; font-size:9px; color:#80a9bc; }
+.weather-footer { display:flex; justify-content:space-between; align-items:center; color:#719daf; font:8px var(--font-mono); gap:8px; }
+.weather-footer a { color:inherit; text-decoration:underline; }
+.weather-footer button { border:0; background:transparent; padding:2px; }
+.weather-inline-error { grid-column:1/-1; margin:0; padding:8px 20px; color:#efb3a9; font-size:10px; border-top:1px solid #35d7de25; }
+.location-picker { position:absolute; top:calc(100% + 10px); left:0; right:0; padding:20px; background:#04141ff7; border:1px solid #48d3dd65; border-radius:18px 0; box-shadow:0 12px 40px #0009; max-height:450px; overflow:auto; }
+.location-picker h2 { font:11px var(--font-mono); letter-spacing:.12em; }
+.location-picker p { font-size:11px; line-height:1.6; color:#a7c0cf; }
+.location-picker form { display:flex; gap:8px; }
+.location-picker input { width:100%; min-width:0; padding:10px; background:#061a27; border:1px solid #45c8d755; color:#e0f5fa; border-radius:8px 0; font-size:12px; }
+.location-picker ul { list-style:none; padding:0; }
+.location-picker li button { text-align:left; width:100%; padding:10px; margin-bottom:5px; }
+.location-picker>button { display:inline-flex; align-items:center; gap:6px; padding:10px; margin-right:8px; }
+.weather-refreshing { animation:weather-spin 1s linear infinite; }
+@keyframes weather-spin { to { transform:rotate(360deg); } }
+.motion-off .weather-refreshing { animation:none; }
+.world-graph { top:300px; }
+.runtime-warning { top:140px; }
+@media(max-width:1050px) and (min-width:701px) { .location-hud { left:20px; width:calc(100vw - 40px); max-width:640px; } .system-check-panel { top:335px; } }
+@media(max-width:700px) { .apex-world { min-height:1240px; } .location-hud { top:220px; left:16px; right:16px; width:auto; grid-template-columns:1fr; } .location-clock { padding:12px 16px; border-right:0; border-bottom:1px solid #35d7de25; gap:4px; } .local-time { font-size:30px; } .location-clock .hud-eyebrow { position:absolute; right:16px; top:16px; } .location-clock small { position:absolute; right:16px; top:38px; max-width:140px; text-align:right; font-size:7px; } .location-weather { padding:12px 16px; } .weather-reading { padding:5px 0; } .weather-reading strong { font-size:30px; } .world-graph { top:430px; } .world-orb { top:49%; } .world-activity { top:60%; } .initialize-apex { top:65%; } .runtime-warning { top:200px; } .system-check-panel,.workspace-shell { top:450px; } .personality-wrap .apex-personality-panel,.agent-inspector { top:450px; } .location-picker { max-height:470px; } }
+@media(max-width:700px) { .apex-world { min-height:1320px; } .world-activity { top:58%; } .initialize-apex { top:61.5%; } .agent-picker { bottom:386px; } }
+.location-attribution { display:block; margin-top:8px; color:#7ca8b7; font-size:8px; }
+.location-attribution a { color:inherit; }
+/* Focus keeps components mounted: conversation, voice and jobs continue. */
+.focus-toggle { position:absolute; top:143px; right:32px; z-index:60; border:1px solid #4cd4df60; background:#061924d9; color:#c3edf2; font:10px var(--font-mono); letter-spacing:.07em; padding:9px 12px; border-radius:10px 0; }
+.focus-mode > .apex-header,.focus-mode > .workspace-nav,.focus-mode > .location-hud,.focus-mode > .runtime-warning,.focus-mode > .world-graph,.focus-mode > .world-activity,.focus-mode > .agent-picker,.focus-mode > .apex-chat-panel,.focus-mode > .initialize-apex,.focus-mode > .system-check-panel,.focus-mode > .personality-wrap,.focus-mode > .workspace-shell,.focus-mode > .agent-inspector { display:none !important; }
+.apex-world.focus-mode { height:100dvh; min-height:560px; }
+.focus-mode .world-orb { top:46%; width:min(700px,78vw); height:min(580px,64vw); }
+.focus-mode .world-status { display:block; top:72%; bottom:auto; height:80px; left:50%; right:auto; width:320px; transform:translateX(-50%); }
+.focus-waveform { display:flex; justify-content:center; }
+.focus-mode .focus-toggle { top:24px; right:24px; opacity:.45; transition:opacity .2s; }
+.focus-mode .focus-toggle:hover,.focus-mode .focus-toggle:focus-visible { opacity:1; }
+.motion-off .focus-waveform * { animation:none !important; }
+@media(max-width:700px) { .focus-toggle { top:178px; right:16px; } .focus-mode .world-orb { width:100vw; height:90vw; } .focus-mode .world-status { top:70%; width:300px; } .focus-mode .focus-toggle { top:16px; right:16px; } }
+/* Reference essentials remain visible while task panels are hidden. */
+.on-this-day { grid-column:1/-1; padding:10px 20px; border-top:1px solid #35d7de25; }
+.on-this-day .hud-eyebrow { justify-content:space-between; }
+.on-this-day p { margin:7px 0 0; font-size:10px; line-height:1.6; color:#acccda; }
+.on-this-day strong { color:#f2cc77; font-weight:500; }
+.on-this-day a { color:#74cbd7; white-space:nowrap; font-size:9px; }
+.on-this-day button { margin-left:10px; background:transparent; color:#8fd4de; border:1px solid #39c3d044; padding:3px 8px; }
+.essential-status { grid-column:1/-1; display:flex; flex-wrap:wrap; gap:12px; padding:10px 20px; border-top:1px solid #35d7de25; font:8px var(--font-mono); letter-spacing:.03em; }
+.essential-status>span { display:inline-flex; align-items:center; gap:5px; color:#82c6d1; }
+.essential-status b { font-weight:400; color:#bfd1da; text-transform:uppercase; }
+.essential-status i { width:4px; height:4px; border-radius:50%; flex-shrink:0; }
+.status-active { background:#5ee8bc; box-shadow:0 0 8px #5ee8bc66; }
+.status-idle { background:#a68d58; }
+.status-error { background:#ed827a; }
+.apex-world.focus-mode > .location-hud { display:grid !important; top:24px; left:24px; width:460px; grid-template-columns:190px 1fr; border:0; border-top:1px solid #4bd7df77; border-radius:0; background:linear-gradient(120deg,#041420ad,#04142000); }
+.focus-mode .location-clock { padding:12px 12px 10px; }
+.focus-mode .local-time { font-size:32px; }
+.focus-mode .local-date { font-size:9px; }
+.focus-mode .location-clock small { font-size:7px; }
+.focus-mode .location-weather { padding:12px 10px 8px; }
+.focus-mode .weather-reading { gap:9px; }
+.focus-mode .weather-reading strong { font-size:27px; }
+.focus-mode .weather-reading>svg { width:24px; }
+.focus-mode .weather-reading div { font-size:9px; }
+.focus-mode .weather-reading small { font-size:8px; }
+.focus-mode .on-this-day { padding:9px 12px; }
+.focus-mode .on-this-day p { font-size:9px; }
+.focus-mode .essential-status { padding:9px 12px; gap:10px; font-size:7px; }
+@media(max-width:700px) { .apex-world.focus-mode > .location-hud { top:58px; left:16px; width:calc(100% - 32px); grid-template-columns:1fr; } .focus-mode .location-clock .hud-eyebrow { top:12px; } .focus-mode .location-clock small { top:38px; } .focus-mode .location-clock { padding:10px 12px; } .focus-mode .location-weather { padding:8px 12px; } .focus-mode .on-this-day p { max-height:58px; overflow:auto; } .focus-mode .world-orb { top:57%; } .focus-mode .world-status { top:81%; } .apex-world.focus-mode { min-height:760px; } }
+.apex-hosted-notice { position:fixed; bottom:76px; left:50%; transform:translateX(-50%); z-index:100; width:max-content; max-width:calc(100vw - 32px); padding:9px 14px; border:1px solid #45cede55; border-radius:6px; background:#041017d9; color:#a6e5ed; font:10px/1.5 monospace; letter-spacing:1px; text-align:center; backdrop-filter:blur(8px); pointer-events:none; }
+.apex-hosted-notice span { display:block; color:#83a3ae; font-size:9px; letter-spacing:0; }

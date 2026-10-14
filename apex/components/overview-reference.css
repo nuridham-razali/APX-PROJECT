@@ -1,0 +1,65 @@
+.hud-preview .hud-overview,.nova-hud .nova-overview{position:absolute;left:6px;top:6px;width:264px;max-width:calc(100vw - 80px);padding:0;border:0;z-index:3;pointer-events:auto}
+.hud-preview .location-hud.overview-reference,.nova-hud .location-hud.overview-reference{position:static!important;display:grid;grid-template-columns:106px minmax(0,1fr);width:100%!important;max-width:none;gap:0;background:#04101ba6!important;border:1px solid #214253!important;border-radius:0;box-shadow:none;padding:0;color:#a9e5f3;font-family:var(--font-mono),monospace}
+.location-hud.overview-reference .location-clock{padding:8px 8px 7px;border:0;border-right:1px solid #193344;display:flex;flex-direction:column;gap:3px}
+.location-hud.overview-reference .location-clock>.hud-eyebrow{display:flex;position:static;color:#6bd5ed;font-size:5px;letter-spacing:1.2px;line-height:1.5;gap:0}
+.location-hud.overview-reference .hud-eyebrow svg{display:none}
+.location-hud.overview-reference .local-time{font:400 18px/1.15 var(--font-mono),monospace;color:#d4f4ff;letter-spacing:-.6px;text-shadow:none;white-space:nowrap;margin:2px 0 0}
+.location-hud.overview-reference .local-date{font-size:6px;line-height:1.4;color:#9ddfee;letter-spacing:0;text-transform:none;max-width:none}
+.location-hud.overview-reference .location-clock>small{display:block;position:static;max-width:none;text-align:left;font:5px/1.5 var(--font-mono),monospace;color:#75a0b3}
+.location-hud.overview-reference .location-weather{padding:8px;display:flex;flex-direction:column;border:0;min-width:0;gap:0}
+.location-hud.overview-reference .location-weather>.hud-eyebrow{order:0;display:flex;justify-content:space-between;align-items:flex-start;color:#6bd5ed;font-size:5px;line-height:1.5;letter-spacing:.8px;padding:0;gap:3px}
+.location-hud.overview-reference .location-weather>.hud-eyebrow>span{overflow-wrap:anywhere}
+.location-hud.overview-reference .location-weather>.hud-eyebrow button{border:0;background:none;color:#729dad;font-size:5px;padding:0;opacity:0;cursor:pointer}
+.location-hud.overview-reference .location-weather:hover>.hud-eyebrow button,.location-hud.overview-reference .location-weather:focus-within>.hud-eyebrow button{opacity:1}
+.location-hud.overview-reference .weather-reading{order:1;display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:4px 6px;padding:7px 0 0;min-height:0}
+.location-hud.overview-reference .weather-reading>svg{display:none}
+.location-hud.overview-reference .weather-reading strong{font:400 17px/1.2 var(--font-mono),monospace;color:#ffd36d;white-space:nowrap}
+.location-hud.overview-reference .weather-reading sup{font-size:10px;margin-left:5px}
+.location-hud.overview-reference .weather-reading>div{display:contents}
+.location-hud.overview-reference .weather-reading>div>span{font-size:6px;line-height:1.5;color:#b1e4f3}
+.location-hud.overview-reference .weather-reading small{grid-column:1/-1;font:5px/1.6 var(--font-mono),monospace;color:#82b2c7;max-width:none}
+.location-hud.overview-reference .weather-footer{display:none}
+.location-hud.overview-reference .on-this-day{position:static;inset:auto;width:auto;grid-column:1/-1;margin:0;padding:7px 8px;border:0;border-top:1px solid #193344;background:none}
+.location-hud.overview-reference .on-this-day .hud-eyebrow{font-size:5px;line-height:1.5;letter-spacing:1px;color:#6bd5ed;display:flex;justify-content:space-between}
+.location-hud.overview-reference .on-this-day .hud-eyebrow span{font-size:5px;color:#6bd5ed;letter-spacing:1px}
+.location-hud.overview-reference .on-this-day p{font-size:6px;line-height:1.6;color:#b6e8f5;margin:4px 0 0;max-width:none;max-height:none;overflow:visible}
+.location-hud.overview-reference .on-this-day strong{color:#ffd36d;font-weight:400}
+.location-hud.overview-reference .on-this-day a{font-size:5px;color:#7bafc4;text-decoration:none}
+.location-hud.overview-reference .essential-status{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 7px;margin:0;padding:5px 8px;border:0;border-top:1px solid #193344;background:none;font:4.5px/1.5 var(--font-mono),monospace;letter-spacing:.2px}
+.location-hud.overview-reference .essential-status>span{gap:3px;color:#88bacc}
+.location-hud.overview-reference .essential-status b{font-size:4.5px;color:#accfde;font-weight:400}
+.location-hud.overview-reference .essential-status i{width:2px;height:2px;box-shadow:none}
+.location-hud.overview-reference .weather-inline-error{grid-column:1/-1;margin:0;padding:4px 8px;font-size:6px;color:#e3a5ac}
+.location-hud.overview-reference .location-picker{position:absolute;top:100%;left:0;right:auto;width:280px;max-width:calc(100vw - 32px);box-sizing:border-box;max-height:65vh;overflow:auto;z-index:10;background:#081421f5;border:1px solid #315060;border-radius:6px;padding:14px;color:#c4e9f4;font-size:11px;box-shadow:0 12px 40px #0009}
+.hud-preview .hud-overview,.nova-hud .nova-overview{width:304px;max-width:calc(100vw - 80px)}
+.hud-preview .location-hud.overview-reference,.nova-hud .location-hud.overview-reference{grid-template-columns:122px minmax(0,1fr)}
+.location-hud.overview-reference .location-clock,.location-hud.overview-reference .location-weather{padding:10px}
+.location-hud.overview-reference .local-time{font-size:21px}
+.location-hud.overview-reference .local-date{font-size:7px}
+.location-hud.overview-reference .location-clock>.hud-eyebrow,.location-hud.overview-reference .location-clock>small,.location-hud.overview-reference .location-weather>.hud-eyebrow{font-size:6px}
+.location-hud.overview-reference .weather-reading strong{font-size:20px}
+.location-hud.overview-reference .weather-reading>div>span{font-size:7px}
+.location-hud.overview-reference .weather-reading small{font-size:6px}
+.location-hud.overview-reference .on-this-day{padding:8px 10px}
+.location-hud.overview-reference .on-this-day .hud-eyebrow,.location-hud.overview-reference .on-this-day .hud-eyebrow span{font-size:6px}
+.location-hud.overview-reference .on-this-day p{font-size:7px}
+.location-hud.overview-reference .essential-status{padding:6px 10px;font-size:5px}
+.location-hud.overview-reference .essential-status b{font-size:5px}
+
+.hud-preview .hud-overview,.nova-hud .nova-overview{width:390px;max-width:calc(100vw - 80px)}
+.hud-preview .location-hud.overview-reference,.nova-hud .location-hud.overview-reference{grid-template-columns:158px minmax(0,1fr)}
+.location-hud.overview-reference .location-clock,.location-hud.overview-reference .location-weather{padding:13px}
+.location-hud.overview-reference .local-time{font-size:28px}
+.location-hud.overview-reference .local-date{font-size:9px}
+.location-hud.overview-reference .location-clock>.hud-eyebrow,.location-hud.overview-reference .location-clock>small,.location-hud.overview-reference .location-weather>.hud-eyebrow{font-size:8px}
+.location-hud.overview-reference .weather-reading strong{font-size:26px}
+.location-hud.overview-reference .weather-reading sup{font-size:13px}
+.location-hud.overview-reference .weather-reading>div>span{font-size:9px}
+.location-hud.overview-reference .weather-reading small{font-size:8px}
+.location-hud.overview-reference .on-this-day{padding:11px 13px}
+.location-hud.overview-reference .on-this-day .hud-eyebrow,.location-hud.overview-reference .on-this-day .hud-eyebrow span{font-size:8px}
+.location-hud.overview-reference .on-this-day p{font-size:9px}
+.location-hud.overview-reference .on-this-day a{font-size:7px}
+.location-hud.overview-reference .essential-status{padding:8px 13px;font-size:6.5px}
+.location-hud.overview-reference .essential-status b{font-size:6.5px}
+@media(max-width:900px){.hud-preview .hud-preview-state{top:auto;bottom:170px}.nova-hud .nova-session{top:auto;bottom:170px}}

@@ -1,0 +1,11 @@
+.hud-preview .apex-session-control{position:fixed;z-index:14;top:14px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:7px;min-height:25px;padding:5px 10px;border:1px solid #46d8ed50;border-radius:20px;background:#06131ccc;color:#acdce5;backdrop-filter:blur(10px);font:7px var(--font-mono),monospace;letter-spacing:1px;white-space:nowrap;cursor:pointer;animation:apex-session-reveal .2s ease-out;}
+.apex-session-light{width:4px;height:4px;border-radius:50%;background:#52deee;box-shadow:0 0 7px #52deee90;}
+.hud-preview .apex-session-control[data-speaking=true]{border-color:#e2bd7266;color:#efd79e;box-shadow:0 0 12px #d9b66b17;}
+.apex-session-control[data-speaking=true] .apex-session-light{background:#ebc87b;box-shadow:0 0 7px #ebc87b90;}
+.hud-preview .apex-session-control:hover,.hud-preview .apex-session-control:focus-visible{border-color:#e9cb89;outline:1px solid #e9cb8944;outline-offset:3px;}
+.hud-preview .wake-voice-indicator{position:fixed;}
+.hud-preview:has(.apex-session-control) .wake-voice-indicator{top:47px;}
+.hud-preview:has(.apex-session-control) .hud-preview-state{visibility:hidden;}
+@keyframes apex-session-reveal{from{opacity:0;translate:0 -4px}to{opacity:1;translate:0 0}}
+@media(max-width:700px){.hud-preview .apex-session-control{top:15px;}.hud-preview:has(.apex-session-control) .wake-voice-indicator{top:49px;}}
+@media(prefers-reduced-motion:reduce){.hud-preview .apex-session-control{animation:none;}}

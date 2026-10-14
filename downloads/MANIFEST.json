@@ -1,0 +1,1607 @@
+{
+  "created": "2026-10-14",
+  "sourceFiles": 320,
+  "secretScan": "Passed; configured private credentials not present",
+  "files": [
+    {
+      "path": ".env.example",
+      "bytes": 2077,
+      "sha256": "745a083f478bacfe505844d32e23fed7390273a067332eedc77d743dafbda716"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 209,
+      "sha256": "37f49e349f0f41ef8a48007dfe7bf2fb6b205f2c13e801d13f8b3b86fd3fc34c"
+    },
+    {
+      "path": ".vercelignore",
+      "bytes": 109,
+      "sha256": "cf22cfbeb30de3bb5e2ea005ed4a9ec074b06638381db4463c683e4e2b57dc66"
+    },
+    {
+      "path": "app/api/chat/route.ts",
+      "bytes": 172,
+      "sha256": "01a8c734a5b0cddd357175da99512650b9563dfeb761b0345242b3d6bccfe4a2"
+    },
+    {
+      "path": "app/api/on-this-day/route.ts",
+      "bytes": 494,
+      "sha256": "d72a41f0a75cf6e828f786ed450d2c4e3e96586378ebb26b8d50a8c6dd481dc9"
+    },
+    {
+      "path": "app/api/runtime/[...path]/route.ts",
+      "bytes": 452,
+      "sha256": "b66e3c227de1d71c883dd04eaf8a4ea04b8e2438f36414568345564940103faf"
+    },
+    {
+      "path": "app/api/weather/route.ts",
+      "bytes": 656,
+      "sha256": "0a33dcfa3b2ae90891f3a07937e386466025aa3f1447588fdea43e4317868680"
+    },
+    {
+      "path": "app/globals.css",
+      "bytes": 31484,
+      "sha256": "5b791d6e35c4daff59d4117bd92218d874f3b7c9e948b65008eb2c99d70dd1f2"
+    },
+    {
+      "path": "app/layout.tsx",
+      "bytes": 439,
+      "sha256": "11a37216bed3cd8db694f6e10811d2fdf30faffcad9eda6d29d799b49b026159"
+    },
+    {
+      "path": "app/page.tsx",
+      "bytes": 428,
+      "sha256": "657e9431f7b5d06197c1e3596d817e96fc5bd02d3c468fe9337ed12b20efe7b3"
+    },
+    {
+      "path": "app/workspace/page.tsx",
+      "bytes": 99,
+      "sha256": "ce269ae3a499537846a47c64cd572756489f5a0b815858ddfa6e4229b46d4ded"
+    },
+    {
+      "path": "BUILD_LOG.md",
+      "bytes": 11118,
+      "sha256": "2cd39fdcac1f57495af780fc4ce13faaadce1a3276eb0c968a3c25997fff5f46"
+    },
+    {
+      "path": "components/apex-humanoid.css",
+      "bytes": 1075,
+      "sha256": "5c0a181d73902644812cbd800444710825f9fb6ec27067f007e86c180fd19109"
+    },
+    {
+      "path": "components/apex-orb.css",
+      "bytes": 5245,
+      "sha256": "76f664c8dfbc7436beb301c743ad67c44b0af080d16546e6ffb0deb3cff994ea"
+    },
+    {
+      "path": "components/apex-reasoning-network.css",
+      "bytes": 4284,
+      "sha256": "c3334a2601a0f7caeb43fa67b9dc2f556279507bb7f02e33bfb03990eb9185b6"
+    },
+    {
+      "path": "components/apex-session-control.css",
+      "bytes": 1456,
+      "sha256": "7ea337888d6d69daa95cefd7428120a3fc0e9abdf5e239f698696928ca7d2130"
+    },
+    {
+      "path": "components/apex-system-check.css",
+      "bytes": 7850,
+      "sha256": "733d842b89dc620d035208f7a57cd19abcab81fac17e6e49a26b8099e5abbdff"
+    },
+    {
+      "path": "components/ApexCore3D.jsx",
+      "bytes": 27213,
+      "sha256": "e75af2a7fce71eee178368bea59a1e7037b46664aa45300273baa6e4032e64f9"
+    },
+    {
+      "path": "components/ApexHeroOrb.tsx",
+      "bytes": 4415,
+      "sha256": "5691d19776531d26d8ea7d8fc61322c6ea1673590ddd287a0fd5d0a34a502ea0"
+    },
+    {
+      "path": "components/ApexHumanoid.tsx",
+      "bytes": 2386,
+      "sha256": "39d1d6a504e2a27af75aab0f8cdb61f1d79c975335eb3d209c13847ce31e7d36"
+    },
+    {
+      "path": "components/ApexOrb.jsx",
+      "bytes": 9478,
+      "sha256": "0d3bbd55073a6febc9fd54ad3bb89f912e05c6769107c655eeb6a83d0579946b"
+    },
+    {
+      "path": "components/ApexOverviewPanel.tsx",
+      "bytes": 8229,
+      "sha256": "5c2cc28379fcbbc5af67f9c6d667726111da3366f3ab5c1ed9e721c5e9e2e158"
+    },
+    {
+      "path": "components/ApexReasoningNetwork.tsx",
+      "bytes": 8217,
+      "sha256": "78e94c5eaaa1854defa689e0e557fcc54d6e695473690e432505ad45f3ce1a38"
+    },
+    {
+      "path": "components/ApexSessionControl.tsx",
+      "bytes": 1111,
+      "sha256": "96b09a1e7779be423bf866100812527cd18a0478cc7cb3de08db169116e6e095"
+    },
+    {
+      "path": "components/ApexSystemCheck.tsx",
+      "bytes": 8231,
+      "sha256": "ad20406908167327dd387f15c515d56b52aac5df387dc9ce35431fcd09ed6faf"
+    },
+    {
+      "path": "components/ApexWorld.tsx",
+      "bytes": 13629,
+      "sha256": "792dcc12d63f4857092e030ff08e84a434f2b238d6d2e6bbf8644ba49c5015c9"
+    },
+    {
+      "path": "components/browser-voice-hud.css",
+      "bytes": 1723,
+      "sha256": "b15f7b19af63cbf3c84009a4ba281e013083b35a8f38f960b73994a18ca63417"
+    },
+    {
+      "path": "components/BrowserVoiceHud.tsx",
+      "bytes": 2589,
+      "sha256": "d3788d09b7d9c46d28e8afa95cfbd22c330eaef0929e5501a29f39292cbbdb9b"
+    },
+    {
+      "path": "components/ChatPanel.tsx",
+      "bytes": 5788,
+      "sha256": "b859ea407d65541ea09fc2962ad2ad6129ceefcb49b5ed0583490f973eb2294f"
+    },
+    {
+      "path": "components/GalaxyBackground.tsx",
+      "bytes": 6683,
+      "sha256": "1432ad48478d9380e037e0b94f2b281bc2b6d0f1dc3c22f378b36330c28e66e3"
+    },
+    {
+      "path": "components/hud-preview.css",
+      "bytes": 18455,
+      "sha256": "d252dc1d305d967f0619a91ac62f9066ae4c2a0bd53ecaf8e01a361537b3463c"
+    },
+    {
+      "path": "components/hud-response-overlay.css",
+      "bytes": 2679,
+      "sha256": "ce0aacbbc6937a15f6ebbc599cb5a74e635d9523eeecf55a3139feff3b85087c"
+    },
+    {
+      "path": "components/hud-visuals.ts",
+      "bytes": 239,
+      "sha256": "f2d68963c6aaef1242715fbd31c3f2653c5d11d3a4f5e79f701da05a20abb149"
+    },
+    {
+      "path": "components/hud-work-panel.css",
+      "bytes": 1363,
+      "sha256": "e2cb5aa9258cf6d9749489293c36c29cc46871188e8eae89718e421d85d18a93"
+    },
+    {
+      "path": "components/HudParticleCore.tsx",
+      "bytes": 3196,
+      "sha256": "f64cfcd41a2e0ce21739ee43d63d8dcfe02cfd5a221fe350b59a764b1c6cde6e"
+    },
+    {
+      "path": "components/HudPreview.tsx",
+      "bytes": 15792,
+      "sha256": "24796273bab55390b67d0efe5cd5178f0556901f09c52810de74917af6019870"
+    },
+    {
+      "path": "components/HudResponseOverlay.tsx",
+      "bytes": 1955,
+      "sha256": "0e7f3f8d389dd93a9c416be9bfb37e39b114cf7262abe98ab67a0c740f7a9186"
+    },
+    {
+      "path": "components/HudWaveform.tsx",
+      "bytes": 928,
+      "sha256": "4e95c605e2c4a24f390bc2b454599f0ac682a9c12e23072fa283a9b5edf320f3"
+    },
+    {
+      "path": "components/HudWorkPanel.tsx",
+      "bytes": 29892,
+      "sha256": "3d355dfc9811bc07eb7f326b5977bef4b07cc6bd59a8849465d75497e831e60a"
+    },
+    {
+      "path": "components/LocationHud.tsx",
+      "bytes": 9554,
+      "sha256": "769ab65cf4ede8057efa8c401c6b85eb3e035f25973f456c534a288b4fe07282"
+    },
+    {
+      "path": "components/loops-panel.css",
+      "bytes": 3161,
+      "sha256": "40bba95aeb01902f6a4c97f6e368d0ec124350e5e3c361834bfa8d74f86a05a9"
+    },
+    {
+      "path": "components/LoopsPanel.tsx",
+      "bytes": 15859,
+      "sha256": "7002292a587bdc6ed7cd97c46b05fcb62b9aa362140e741eb953cdc565a48d01"
+    },
+    {
+      "path": "components/nova/audio-features.mjs",
+      "bytes": 1075,
+      "sha256": "96be0aa32dc600b59f2938fac53191e5ce69052dae95a9df80b082e30a4ef7ce"
+    },
+    {
+      "path": "components/nova/nova.css",
+      "bytes": 18771,
+      "sha256": "345584a9175f5d42d57fb151d4e49b743892a26483bb2b54a9584d877a5d1d36"
+    },
+    {
+      "path": "components/nova/NovaHud.tsx",
+      "bytes": 25358,
+      "sha256": "9514937ecec6772fdf4d3e66fa4b397c2e9eb80a22c802a36282f7584b44c45f"
+    },
+    {
+      "path": "components/nova/NovaScene.tsx",
+      "bytes": 13130,
+      "sha256": "8354dc23717c70e39058a064ea9efbbe3f83481d66ddda147def174596f2c16b"
+    },
+    {
+      "path": "components/nova/NovaWaveform.tsx",
+      "bytes": 1466,
+      "sha256": "903aaf54e38bb4359e9931d674a89a78a240723e64b6e206c83971aea8bcf2f6"
+    },
+    {
+      "path": "components/nova/state-motion.mjs",
+      "bytes": 1401,
+      "sha256": "8f94d514f80282aeafb7b63d723807dcfe5da53b9c1a5c5754fa2bd0c8aa513e"
+    },
+    {
+      "path": "components/nova/useLocalVoice.ts",
+      "bytes": 6256,
+      "sha256": "1324f17a4fd5aa6e7becb84ae4d1281aaa40a77b8015aa3d99f7e5e0b6225462"
+    },
+    {
+      "path": "components/nova/useNovaAudio.ts",
+      "bytes": 5181,
+      "sha256": "0c8f379d3711ec6299391a8f87028206ccf1c8b7312648f2e3bde7b5fca5a91a"
+    },
+    {
+      "path": "components/nova/visual-config.ts",
+      "bytes": 464,
+      "sha256": "4414b6e593c773f81c3fe05f9cc04d7bd6ccb61a12dcc81279a6f7616ba2e025"
+    },
+    {
+      "path": "components/OnThisDay.tsx",
+      "bytes": 1557,
+      "sha256": "264d0a3bd0df30c6dfc1eb9c709ac6062d6031a9ba3b2fa3966dbf63d5fe17b7"
+    },
+    {
+      "path": "components/OrbStatusBar.jsx",
+      "bytes": 4207,
+      "sha256": "d491c8cc17b417d02d4f008adb20c7d6130b400865fd157ffaa0e664a246db77"
+    },
+    {
+      "path": "components/overview-reference.css",
+      "bytes": 7722,
+      "sha256": "81c8b168939f02a1d09c83ac13766a60ad612c54d436200e935074c96f5069bb"
+    },
+    {
+      "path": "components/OverviewCard.tsx",
+      "bytes": 1132,
+      "sha256": "622cbf4bdcd44531671ed649e0838051084f41de66f59413bf58266eb485e5e2"
+    },
+    {
+      "path": "components/personality-equalizer.css",
+      "bytes": 2330,
+      "sha256": "c70aadccef07e36e34432d54d5978763116e74997c78dfbee64e771e600bdbfe"
+    },
+    {
+      "path": "components/PersonalityEqualizer.tsx",
+      "bytes": 4702,
+      "sha256": "7f7e43b15994bbba673190c9e3657ae3273d61a528f9015c70d1bb5a8345ded9"
+    },
+    {
+      "path": "components/PersonalityPanel.tsx",
+      "bytes": 3559,
+      "sha256": "46df6928fa7889ad2002d994310ac8671c7b6368619976979a29c86f509cb083"
+    },
+    {
+      "path": "components/ReasoningWeb.jsx",
+      "bytes": 21451,
+      "sha256": "76e3c63b8b7679be0acf699b91d4d9f1a58defa627536a63ea58d429a5eda6d7"
+    },
+    {
+      "path": "components/runtime-types.ts",
+      "bytes": 2753,
+      "sha256": "305722e8556570a355044f83b4986d0965b501cb4519eb438512fdc1e98eb186"
+    },
+    {
+      "path": "components/ShaderBackground.jsx",
+      "bytes": 13496,
+      "sha256": "675d632922dfc10511821818a49c80e131aebf16b16166534de2c16c1c99331a"
+    },
+    {
+      "path": "components/upstream/apex-orb.css",
+      "bytes": 5245,
+      "sha256": "76f664c8dfbc7436beb301c743ad67c44b0af080d16546e6ffb0deb3cff994ea"
+    },
+    {
+      "path": "components/upstream/ApexCore3D.jsx",
+      "bytes": 27708,
+      "sha256": "d5a91b2314768bfbe225f014e2a318203f0e1a6a0e29c1da097b30c90e632621"
+    },
+    {
+      "path": "components/upstream/ApexOrb.jsx",
+      "bytes": 9686,
+      "sha256": "693519f0ab88052ee33dafa3f34e46cbe80cf6150d552050d403dda006693a08"
+    },
+    {
+      "path": "components/useApexVoice.ts",
+      "bytes": 4739,
+      "sha256": "0f2443dbeb5694f1bf7aa63c66950228ed9ae1ebde5dfbeabb9a60d70dadff27"
+    },
+    {
+      "path": "components/VoiceChat.tsx",
+      "bytes": 4609,
+      "sha256": "bac90b798d83ef04035a5a9bb375792698fc68ce05c0ae9011142509c005f51c"
+    },
+    {
+      "path": "components/wake-voice-indicator.css",
+      "bytes": 2688,
+      "sha256": "7ffdd739053a7fa657b363231a0980e40fe8bd60c7b3ce2ca508304d27182d9b"
+    },
+    {
+      "path": "components/WakeVoiceIndicator.tsx",
+      "bytes": 4339,
+      "sha256": "ad6bc54844d3ee9d72675451df610049423651143ea0e79596d03df42a8a2013"
+    },
+    {
+      "path": "components/WorkflowWorkspace.tsx",
+      "bytes": 14217,
+      "sha256": "b74b681ed4a272fbb7878a1e7a9da39ae503f3b6af8680509b8cbffbf95f0441"
+    },
+    {
+      "path": "CREDITS.md",
+      "bytes": 4591,
+      "sha256": "2f9427c182ac80813d4bf4656161924592db3ddf47bc5eec40b3545bdf886863"
+    },
+    {
+      "path": "DESKTOP-AUTOMATION.md",
+      "bytes": 5421,
+      "sha256": "c6fa7dbe09ad76dd9f15d5d00e26b653f8e317d3050345a0aa1b7b8d7803b084"
+    },
+    {
+      "path": "DEVELOPMENT-PLAN.md",
+      "bytes": 4361,
+      "sha256": "e24707e918ca20d9db3c495974b0d9edabde5de949d9d110cca6602a3178fabb"
+    },
+    {
+      "path": "docs/18-NODE-DELIVERY.md",
+      "bytes": 13400,
+      "sha256": "891e8805ff9adad58084899f6aa421eb93abcf57a18819c348eeecaefa00f1d2"
+    },
+    {
+      "path": "docs/AGENT-ARCHITECTURE-ROADMAP.md",
+      "bytes": 11293,
+      "sha256": "bfccabac6eaea086d90399d411cd09ca0c7af6d578d1649c39937dcbea7826a8"
+    },
+    {
+      "path": "docs/APEX-Assistant-Build-Guide.md",
+      "bytes": 30264,
+      "sha256": "70fd19cec2abae1f222c2af68146a65204f0772082a514ec57ce6c21279b3819"
+    },
+    {
+      "path": "docs/APEX-CLOUD-VOICE.md",
+      "bytes": 3240,
+      "sha256": "7732c3b6e985c816b91c45980116b6d81cb682caadf0e07996fa1ba945b1226c"
+    },
+    {
+      "path": "docs/APEX-HANDS-FREE-TRANSCRIPT.md",
+      "bytes": 3192,
+      "sha256": "c65252e673842e70e314553ebc0ce67ec07be9b8daa5a9e1b973391c346a66f2"
+    },
+    {
+      "path": "docs/APEX-LIVE-SPEECH.md",
+      "bytes": 2042,
+      "sha256": "2f71b31b5b9287f4495c44edf5f259d75ab57cf11c8375e4c0917c198beeea2b"
+    },
+    {
+      "path": "docs/ApexWorld.reference.tsx.txt",
+      "bytes": 18472,
+      "sha256": "26ec440a37175ff33150260e802e082c8dbc2de2008229b32c7cf3ed6ef467e8"
+    },
+    {
+      "path": "docs/BACKEND-PLAN.md",
+      "bytes": 9065,
+      "sha256": "a7b7f7a7f86cc3ead308afbc4bd136e47f1af3b868df7155542dd2c147c25db1"
+    },
+    {
+      "path": "docs/BACKGROUND-CONVERSATION.md",
+      "bytes": 6351,
+      "sha256": "1e2eaf99eb973ac228ac3ebb4fff452af5b9a61323cf2e65cee692057999f420"
+    },
+    {
+      "path": "docs/BROWSER-HANDS-FREE.md",
+      "bytes": 5487,
+      "sha256": "966b3fdc6f9e76af8c3542432cf85dcae6b1c784160e2d016d6716c632b3a4de"
+    },
+    {
+      "path": "docs/GOOGLE-CONNECTION.md",
+      "bytes": 2073,
+      "sha256": "6f4ae28591925bb0269a5f19bb8eb167df4f4893a338b29cfe2db7e4a058f32d"
+    },
+    {
+      "path": "docs/HISTORY-SOURCES.md",
+      "bytes": 1161,
+      "sha256": "ba9a1e97e5458fadebf700d6908927d45fef9999d7067a69b2bb9f1968631a1f"
+    },
+    {
+      "path": "docs/HUD-RESPONSES.md",
+      "bytes": 3979,
+      "sha256": "10475ba0fc063f4f9f5a276a1c066c4c09e4ae084d8f2ee41110767dc06cf449"
+    },
+    {
+      "path": "docs/HUMANOID.md",
+      "bytes": 5961,
+      "sha256": "95506bbb90672396165fcdb7e8de514e3bceeda437bdaad2da7430fc68393df5"
+    },
+    {
+      "path": "docs/licenses/lucide-react.txt",
+      "bytes": 880,
+      "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+    },
+    {
+      "path": "docs/licenses/next.txt",
+      "bytes": 1079,
+      "sha256": "ee765244e2d59f5234d474f62e0766fa0c8b99af967fdd4c0cb8dcb0c76ea224"
+    },
+    {
+      "path": "docs/licenses/react-dom.txt",
+      "bytes": 1088,
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+    },
+    {
+      "path": "docs/licenses/react.txt",
+      "bytes": 1088,
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+    },
+    {
+      "path": "docs/licenses/three.txt",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    {
+      "path": "docs/licenses/_react-three_postprocessing.txt",
+      "bytes": 1069,
+      "sha256": "2e36b208b403882158daf95cae207087bbb830db4d434a79ebafffca177244c8"
+    },
+    {
+      "path": "docs/LOCAL-BRAIN-VOICE.md",
+      "bytes": 12516,
+      "sha256": "cc58cc64e4cbe69751e3408e4280adcb53894e0184b65ceeb5c3955aa93cd2ca"
+    },
+    {
+      "path": "docs/LOOPS-ENGINE.md",
+      "bytes": 9423,
+      "sha256": "430e6c1849dc77a1d41a347329a296658fd035c73a760a983d80f4b7d05068cb"
+    },
+    {
+      "path": "docs/MARK-LV-BACKEND-REVIEW.md",
+      "bytes": 10545,
+      "sha256": "d88c50ff9cdede89bbd9018dd1d5ffb7a6a0b27005bf4a511157444f64539c1b"
+    },
+    {
+      "path": "docs/NODES-FUNCTIONAL.md",
+      "bytes": 6811,
+      "sha256": "832368934087965fceadb994237f80844beedaf31ef7bc46885cb09ca093101c"
+    },
+    {
+      "path": "docs/PERSONALITY.md",
+      "bytes": 4858,
+      "sha256": "036b8e7f8c528127b7d5eefb2e08637a95d3948a6e0a233c9019be78c5922c70"
+    },
+    {
+      "path": "docs/previews/apex-18-node-system-check.png",
+      "bytes": 77423,
+      "sha256": "d0bb40715c07c1cf3b8c8ec357e6664c226f7e86e3d6ba8d7ae0def61e20b1bd"
+    },
+    {
+      "path": "docs/previews/apex-all-18-nodes.png",
+      "bytes": 71756,
+      "sha256": "1222b9be4fdcd0b010d9b86bf25ea983a527dab9eb35a8b54c4b693f2d8c7e91"
+    },
+    {
+      "path": "docs/previews/apex-background-conversation.png",
+      "bytes": 172063,
+      "sha256": "b1bd8dc97b9daa7c2c7f866afb16843fa4bf63b84b5f469e8b1d0981dd8cf157"
+    },
+    {
+      "path": "docs/previews/APEX-BIG-OVERVIEW.png",
+      "bytes": 30917,
+      "sha256": "dd3f68a965a515b15b52f9d0d0bc2f9a39d90704cc2903dfb79c2211ff74a1dc"
+    },
+    {
+      "path": "docs/previews/apex-browser-hands-free.png",
+      "bytes": 83257,
+      "sha256": "fbdd6533e5df27e9574859c8c04877c0b86d5b39d7fbdef88e055e6037fc7555"
+    },
+    {
+      "path": "docs/previews/APEX-CHECK-SHOCKWAVE.png",
+      "bytes": 77595,
+      "sha256": "ea70b00b3de180eaa98a7c423b78e197c38726638eb11f08b8f195fc3faadbde"
+    },
+    {
+      "path": "docs/previews/APEX-CLEAN-HUD-TASKS.png",
+      "bytes": 24410,
+      "sha256": "57df21b84cb3ac1a750d06e7ee5b3c8129c4ee07547884e892d3260f50b76f3a"
+    },
+    {
+      "path": "docs/previews/APEX-DEEPGRAM-ELEVENLABS.png",
+      "bytes": 50261,
+      "sha256": "b4674d1d6d792acfa70bf4b2db2947655b299bb117ef974553bbb17a66801235"
+    },
+    {
+      "path": "docs/previews/APEX-FISH-AUDIO.png",
+      "bytes": 45759,
+      "sha256": "f8473ad72416f85cbb9d82c8d0bc26975eaa323c874928644409d1498d4b8846"
+    },
+    {
+      "path": "docs/previews/APEX-FISH-VOICE-TEST.mp3",
+      "bytes": 109504,
+      "sha256": "8925778886b09f15d64547ddf40f5942b962d010e71900825deb7a0783fa448b"
+    },
+    {
+      "path": "docs/previews/apex-hud-response.png",
+      "bytes": 61491,
+      "sha256": "f13f95946c097de1d85b82827689472095164c30b35b927fe5185394e4dac96d"
+    },
+    {
+      "path": "docs/previews/APEX-HUD-REVIEW.png",
+      "bytes": 50608,
+      "sha256": "0152a7c182b07570adc9234ff594c00a72dad02f7a0b0924688dbed413e6c90f"
+    },
+    {
+      "path": "docs/previews/apex-humanoid-chat-inspection.png",
+      "bytes": 76676,
+      "sha256": "04103d3518ca667d3bd4d070c671de7c22a6822964ea66109f019f21ebf8bbc1"
+    },
+    {
+      "path": "docs/previews/apex-humanoid-clean.png",
+      "bytes": 122759,
+      "sha256": "d9cc17e3bf18eb910bbd44bb962bc1622b13a1ced6a7fe0ac251240070572416"
+    },
+    {
+      "path": "docs/previews/apex-humanoid-error-persistence.png",
+      "bytes": 150587,
+      "sha256": "2403363a8eb77aa5a6b0b3baa3f2d18354e2f64435eadb2c7d39967611d6eeaa"
+    },
+    {
+      "path": "docs/previews/apex-humanoid-face.png",
+      "bytes": 133162,
+      "sha256": "a402bfec511b0b35025e7d8885b711192ecc06370652cf8282d8f495474187be"
+    },
+    {
+      "path": "docs/previews/apex-humanoid-request-thinking.png",
+      "bytes": 155819,
+      "sha256": "ffc70ae4f231efbf9d4bc752b0ee165a0395d4fe28b21f118dd7feb11031643e"
+    },
+    {
+      "path": "docs/previews/apex-humanoid-thinking.png",
+      "bytes": 156912,
+      "sha256": "21a23a967ac0087cd5108dc5dbc3d53c693c66e2846615f218011c7691a21251"
+    },
+    {
+      "path": "docs/previews/APEX-LARGER-OVERVIEW.png",
+      "bytes": 26459,
+      "sha256": "dcd154c75dad1370768dac730560e9cdfb565e9f5ac14d890801747e0c6f7365"
+    },
+    {
+      "path": "docs/previews/apex-live-stop-hud.png",
+      "bytes": 140733,
+      "sha256": "acba7a8fe1ef47f2f5f24e8ed830b4ab4a5e2207d3ed169c947ef27f3c0cba7c"
+    },
+    {
+      "path": "docs/previews/apex-live-stop-speaking.png",
+      "bytes": 216028,
+      "sha256": "89f8673903dbd55fe39a72091682046727e9dfadad45420d379f79ba8c870642"
+    },
+    {
+      "path": "docs/previews/apex-loops-running.png",
+      "bytes": 53327,
+      "sha256": "04490b8ecd79c48669e0d1b3d8af44f266cdb25da7295048ba315c3a4a43ae28"
+    },
+    {
+      "path": "docs/previews/apex-mic-compact-right.png",
+      "bytes": 82353,
+      "sha256": "b79ed0e4e32afbb735d926073d4c7354f86068b1943a4a0afb03aa49297ef0ae"
+    },
+    {
+      "path": "docs/previews/apex-ollama-3b-working.png",
+      "bytes": 43451,
+      "sha256": "ca58d22de7579732ba8067f8d05b68c1ea32c733cd1b938c46370069d0abba4d"
+    },
+    {
+      "path": "docs/previews/apex-overview-transparent.png",
+      "bytes": 79086,
+      "sha256": "c935c8a4aaf37507c0c5682f6bfdfbcd62d736402e0bd702a33a3606b4b51461"
+    },
+    {
+      "path": "docs/previews/apex-personality-speaking.png",
+      "bytes": 74617,
+      "sha256": "9a0cfc5a037fbdfb906cbf2d98d106d77b4343d14e944b5d154afaa2b75e988f"
+    },
+    {
+      "path": "docs/previews/APEX-PLASMA-SPEAKING.png",
+      "bytes": 69793,
+      "sha256": "d09ce09d3021585065bc9cfc9a471f9a48c70b6a2c5a9fe0a3a9b7101f51d0a1"
+    },
+    {
+      "path": "docs/previews/APEX-PLASMA-THINNER.png",
+      "bytes": 68701,
+      "sha256": "70bad1ca7ff8342d983f7c14646d499277b832b8774bc29490cd0eba45cb81dc"
+    },
+    {
+      "path": "docs/previews/apex-realtime-conversation.png",
+      "bytes": 51086,
+      "sha256": "3f58a3e4b8c5dc2206fcbfb7c755e10f6b92cd4ea39a3a57aaf7b950ab6dce1c"
+    },
+    {
+      "path": "docs/previews/APEX-REASONING-TOGGLE.png",
+      "bytes": 68411,
+      "sha256": "5a7d4b0eefa61541854781eef060dde0a851f18b81d533c7af44463f11ded06f"
+    },
+    {
+      "path": "docs/previews/APEX-REASONING-WEB.png",
+      "bytes": 68051,
+      "sha256": "3f25fdf6e1b349ecb70d38172322a7ae8a10b7955728c6bd7797939a8c76ee27"
+    },
+    {
+      "path": "docs/previews/APEX-REFERENCE-OVERVIEW.png",
+      "bytes": 25164,
+      "sha256": "6efed79f46ae9d277e6fdda008662659814f89374c7e21058f66d8ffa775b184"
+    },
+    {
+      "path": "docs/previews/apex-source-checked-history.png",
+      "bytes": 74819,
+      "sha256": "0f9ca1adf91722ffb6f4f7696774ce1070df06fe1c61d2755508febe9ba317ff"
+    },
+    {
+      "path": "docs/previews/APEX-SYSTEM-CHECK-LEFT.png",
+      "bytes": 70852,
+      "sha256": "7eb31c92d892610403088181e9ae4a014a305de8a2f6b17cbbf9320660d3b65c"
+    },
+    {
+      "path": "docs/previews/APEX-SYSTEM-CHECK.png",
+      "bytes": 42683,
+      "sha256": "e6e6aa425e5bade184838cd26d9748ade922db242c20c0d1dd36695339f4878d"
+    },
+    {
+      "path": "docs/previews/APEX-TASK-LOOP.png",
+      "bytes": 82040,
+      "sha256": "afe53ffd32b2ec2083897d823535529274266d14b0ff4ae72f2f7e8358ca7ea2"
+    },
+    {
+      "path": "docs/previews/APEX-THREE-HUD-CURRENT.png",
+      "bytes": 27393,
+      "sha256": "2b568564f986d17f29270d4ee5ea3e6fa89257d18b89cb8442a37ae2b8b6ea50"
+    },
+    {
+      "path": "docs/previews/APEX-THREE-HUD.png",
+      "bytes": 46097,
+      "sha256": "6ad41175bea6b3b49c432b4387eb1655b41b15fd92e2883e5a98bfbd82cb2679"
+    },
+    {
+      "path": "docs/previews/CORE-ONLY-4.4-QA.png",
+      "bytes": 867162,
+      "sha256": "882bf833e908efe8275002d83aa0af765d2c9ecf385c74f7195874111604880e"
+    },
+    {
+      "path": "docs/previews/CYAN-GOLD-SPEAKING-WAVEFORM.png",
+      "bytes": 43784,
+      "sha256": "34704984b750f30fc94af1725a0ab6b8f594d4ddae61bc6bbfe6bb803717fcd3"
+    },
+    {
+      "path": "docs/previews/DESKTOP-QA.png",
+      "bytes": 947628,
+      "sha256": "d3a3753444146bbd51f1efc7ad7777c4d1a066df04c5bd6efed1bef4a03e7a70"
+    },
+    {
+      "path": "docs/previews/GALAXY-STATIC-QA.png",
+      "bytes": 887634,
+      "sha256": "854149994596b366747d0252b06e94b094f82c5ee30a39a65e89e6a30791f921"
+    },
+    {
+      "path": "docs/previews/LOOPS-QA.png",
+      "bytes": 609556,
+      "sha256": "23a72f5133e4d55c827ddddc53c8472513107dc6eac70ad6b4527a31a1795999"
+    },
+    {
+      "path": "docs/previews/loops-video-reference.jpg",
+      "bytes": 98587,
+      "sha256": "46793441330d0556ca6c8214a465ee6def0061f503daea51414d82897d84fa47"
+    },
+    {
+      "path": "docs/previews/MOBILE-QA.png",
+      "bytes": 389094,
+      "sha256": "66fbed8d54d92142847759c4f838017aad9a7549b91d10287d881bad1f5f8474"
+    },
+    {
+      "path": "docs/previews/NOVA-ACTIVE-VIOLET-INNER-GLOW.png",
+      "bytes": 44043,
+      "sha256": "4918ceca42d33019f1e45034e36f692e41869bd93cceaa2c5443e6f2e03c2235"
+    },
+    {
+      "path": "docs/previews/NOVA-ANTICLOCKWISE-SPIRAL.png",
+      "bytes": 52124,
+      "sha256": "eda10f70c20b640bcfdae433099234c20557132a64e93070d13559e959c2da70"
+    },
+    {
+      "path": "docs/previews/NOVA-APEX-CORE-SPEAKING.png",
+      "bytes": 69833,
+      "sha256": "00867e04d973f4b5aebe2e9b9c65263102601d4b990b904d69e3ad32d6844c1f"
+    },
+    {
+      "path": "docs/previews/NOVA-AUDIO-GLOW.png",
+      "bytes": 71000,
+      "sha256": "b7c520cdba9a660793aaaa11886dcc8e6c911205f375a5e3ba246608312acdd5"
+    },
+    {
+      "path": "docs/previews/NOVA-BACKGROUND-CONVERSATION.png",
+      "bytes": 27312,
+      "sha256": "22de137c04010d7b8a6c00ba0ebc4143ff15fb408e419a1ae6e3ddc8e12bbb66"
+    },
+    {
+      "path": "docs/previews/NOVA-CONTINUOUS-VOICE-READY.png",
+      "bytes": 21653,
+      "sha256": "2fe5924390c96188e6a87f27b2752fdfb967dbfcd12c8da2ab5b09d64996e2b2"
+    },
+    {
+      "path": "docs/previews/NOVA-CONVERSATION-PRIORITY.png",
+      "bytes": 22975,
+      "sha256": "eec8905c5211c9bd5d7a5a6498238774f7d582854ab88a9adc16831a25298a30"
+    },
+    {
+      "path": "docs/previews/NOVA-COSMIC-NEBULA.png",
+      "bytes": 78726,
+      "sha256": "851c0001e9005630a2e8b73e931bfa0aca7077af279d2909fe8a5c5088987a86"
+    },
+    {
+      "path": "docs/previews/NOVA-FISH-VOICE-CONNECTED.png",
+      "bytes": 23204,
+      "sha256": "551baf928dd61cabcb4cbb232cdac6d61e176a28c0c28c8d0f3f866406f47cec"
+    },
+    {
+      "path": "docs/previews/NOVA-FISH-VOICE-SETTINGS.png",
+      "bytes": 23051,
+      "sha256": "258a77031d66726d8faa73a41caf11c7c8f0f6d299908430f4ce653dba1cd567"
+    },
+    {
+      "path": "docs/previews/NOVA-FLOWING-SMOKE.png",
+      "bytes": 104736,
+      "sha256": "4f74f809d9070c944dbe0bc9f413f2eb645d81642a9ac36692a38a68a57bd3b7"
+    },
+    {
+      "path": "docs/previews/NOVA-FLOWING-WIRE-PULSES.png",
+      "bytes": 46929,
+      "sha256": "7429d28a885a6fabd9846d754d496e3213cc6b4b3d1a33a0a716725003ac9c0f"
+    },
+    {
+      "path": "docs/previews/NOVA-GOLD-ORANGE-CORE.png",
+      "bytes": 44688,
+      "sha256": "84304ab9e9c37a632583eb9e516ecfd3d852ed4170edae42887cc4fba7bc2dd8"
+    },
+    {
+      "path": "docs/previews/NOVA-GOLD-VIOLET-WHITE.png",
+      "bytes": 45486,
+      "sha256": "9ee9185e55aa18991aab5dd4aca65c9df2562ba68f82ad727d586cc14bf33b1a"
+    },
+    {
+      "path": "docs/previews/NOVA-HEARTBEAT-ORBITS.png",
+      "bytes": 83055,
+      "sha256": "d3605dc51b089d9bed7bb2b318ff599a99073a8ca0121be51c98752b9bba429f"
+    },
+    {
+      "path": "docs/previews/NOVA-HUD-REVIEW.png",
+      "bytes": 66666,
+      "sha256": "de3fbd6799c108791c9ad4810099dbd7177f0ef51b9a7550dfbdca0d55ae39d8"
+    },
+    {
+      "path": "docs/previews/nova-inspection.png",
+      "bytes": 41991,
+      "sha256": "a4aefedce79d9bf1c750cb2c639e0371cc689949c84c61403ae547432c4f0f61"
+    },
+    {
+      "path": "docs/previews/NOVA-LOCAL-BRAIN-VOICE.png",
+      "bytes": 45752,
+      "sha256": "a302f293bafde36936092955cde3d3c4aa01dd8585a1defc95d30dc522cdee69"
+    },
+    {
+      "path": "docs/previews/NOVA-MAGENTA-VIOLET-HUD.png",
+      "bytes": 80484,
+      "sha256": "8262597f147b03496af07252db3c5a7c41d9fc6af43d32f1dd3e09902982d282"
+    },
+    {
+      "path": "docs/previews/NOVA-MIRA-GLOWING-ORBITS.png",
+      "bytes": 73745,
+      "sha256": "2545c81ecc7197a74677c23419a0b83d191e4e2bf488dd2a4334447137b29c62"
+    },
+    {
+      "path": "docs/previews/NOVA-ORANGE-APEX-CORE.png",
+      "bytes": 80742,
+      "sha256": "90b06e5da18efe29e45490d973d58372dc27dd6b2356d05e2db3947285684681"
+    },
+    {
+      "path": "docs/previews/NOVA-ORANGE-EDGE-VIOLET-CENTER.png",
+      "bytes": 47189,
+      "sha256": "7aef9250425d07423989754ebe34dd8a479e8b8d6a6c820b915ed95702d3ea03"
+    },
+    {
+      "path": "docs/previews/NOVA-REFERENCE-GLOW.png",
+      "bytes": 80553,
+      "sha256": "6a4c14e48fdc54385d363c8c73135b74fba1f9fbce124ba08cf1e1fc90551566"
+    },
+    {
+      "path": "docs/previews/NOVA-REFERENCE-REVISION.png",
+      "bytes": 83697,
+      "sha256": "070885b69c22a8dd5454e0e6d566f4f30d9ca4259b0bef558232444c839ee87a"
+    },
+    {
+      "path": "docs/previews/NOVA-SPEAKING-GALAXY-SMOKE.png",
+      "bytes": 99461,
+      "sha256": "e6f542caf08a417546fc0940bbc41b7acca177dff0146829b24909cd904bb0ff"
+    },
+    {
+      "path": "docs/previews/NOVA-STEADY-SLOWER-SPEAKING.png",
+      "bytes": 44810,
+      "sha256": "b7aa008b501c0e1ded310d818ba81a4973d36c08c0587d60884c51ab1727cd3e"
+    },
+    {
+      "path": "docs/previews/NOVA-TRAVELING-LIGHT-PULSES.png",
+      "bytes": 76778,
+      "sha256": "ae5f34a7f85c1f46548e3b9df3092cde90084414bf772d2791402479c94278c0"
+    },
+    {
+      "path": "docs/previews/NOVA-VIDEO-REFERENCE.png",
+      "bytes": 75683,
+      "sha256": "ddff53530372108b4d506a55195d7093695d8b4bf57df614550a1d9999bceb20"
+    },
+    {
+      "path": "docs/previews/NOVA-VIOLET-ORBIT-GLOW.png",
+      "bytes": 46551,
+      "sha256": "dbcf4ebbdcd0b63a35d52aa5c816f3c8e9aafca78321d213a03c865d2e11e16f"
+    },
+    {
+      "path": "docs/previews/NOVA-VISIBLE-PULSES-THEMED-OVERVIEW.png",
+      "bytes": 44913,
+      "sha256": "26c282f355c2bb5782d8c58d6389e782b55a4d09dd0c6c1cd4069596190370ff"
+    },
+    {
+      "path": "docs/previews/NOVA-VORTEX-NEBULA.png",
+      "bytes": 69779,
+      "sha256": "2c377bca483f9d429b1e67bec406e2e9959ad5b116b440924f86ca57d5f26379"
+    },
+    {
+      "path": "docs/previews/NOVA-VORTEX-PARTICLE-CORE.png",
+      "bytes": 71856,
+      "sha256": "4b8d259770563cea75681b9cc93748031be00eb89867a9880a7de852e1bc71e7"
+    },
+    {
+      "path": "docs/previews/NOVA-WHITE-RING-SINGLE-PULSE.png",
+      "bytes": 46229,
+      "sha256": "c71ace3dd953217cf3591075ca7b4740ebd0e21a32b4f074484ea470fdefffb1"
+    },
+    {
+      "path": "docs/previews/NOVA-WHITE-VIOLET-CORE.png",
+      "bytes": 79927,
+      "sha256": "6e7571e4b54065c9bb685e25d6cac9cb5a62645c59cd12db5ea06dae7beb6534"
+    },
+    {
+      "path": "docs/previews/paused-core-a.png",
+      "bytes": 772,
+      "sha256": "d87a66f10446134341f4ffb66381c85efd80ffdc116a6cdc41be74fc84a79bcb"
+    },
+    {
+      "path": "docs/previews/paused-core-b.png",
+      "bytes": 7750,
+      "sha256": "f7843fddc5e241490073ea7313ca8b1c0063ac468cb30118a8f784c26c54a500"
+    },
+    {
+      "path": "docs/previews/system-check-fade.png",
+      "bytes": 57601,
+      "sha256": "1c2ca21b37e8ceffd1be1842191c74ea70370408e353d36b81eae5dd9046f6e8"
+    },
+    {
+      "path": "docs/previews/system-check-layered-complete.png",
+      "bytes": 77336,
+      "sha256": "ce86fb7ec4aad6688fabb15bf77f3a9147b419bf7428b9548f6109e5f0ceefa3"
+    },
+    {
+      "path": "docs/previews/system-check-reference/contact-sheet.png",
+      "bytes": 793640,
+      "sha256": "b78132eb4afbd9bf7f6824f78b42cba74af6426c2981e0b41a220e8a2bf85136"
+    },
+    {
+      "path": "docs/previews/system-check-reference/frame-0.ppm",
+      "bytes": 2764816,
+      "sha256": "11f1fc674082ee7f990e9313d5b5ae0aa54cabdd42093eaefebe7d9186d3fada"
+    },
+    {
+      "path": "docs/previews/system-check-reference/frame-1.ppm",
+      "bytes": 2764816,
+      "sha256": "e58d8549e083298c11cb58c55265d5c4b6cdd6d0983f299143312a703b9610c6"
+    },
+    {
+      "path": "docs/previews/system-check-reference/frame-2.ppm",
+      "bytes": 2764816,
+      "sha256": "eae7d8adc7dea6ecaa7c3149eb3f4aa00ed52ee9d56290ebc0a92b9f73a7a8ba"
+    },
+    {
+      "path": "docs/previews/system-check-reference/frame-3.ppm",
+      "bytes": 2764816,
+      "sha256": "5bc2189c48976c30253979a3dde8c789488da277c0b3dae1c46380b126ca6a21"
+    },
+    {
+      "path": "docs/previews/system-check-reference/frame-4.ppm",
+      "bytes": 2764816,
+      "sha256": "58c5352515e3e56f88ca5b91b8c13b085db32a9665289eccc23a8e093624f1e6"
+    },
+    {
+      "path": "docs/previews/system-check-reference/frame-5.ppm",
+      "bytes": 2764816,
+      "sha256": "d6666e736b0bb77b3d115518c320c9e763dfedaa8117a8c92076ed944a580ebc"
+    },
+    {
+      "path": "docs/previews/system-check-reference/frame-6.ppm",
+      "bytes": 2764816,
+      "sha256": "6bcde5caf12db7577b5d87b074fc836129c5c4c2d98948a9f6c30ef31c43fbe5"
+    },
+    {
+      "path": "docs/previews/VIDEO-APEX-LISTENING.png",
+      "bytes": 48933,
+      "sha256": "3750f7bd4b4f6413b3064f444a203ac53d4b352d4a986d02d236961b86c8e35e"
+    },
+    {
+      "path": "docs/previews/VIDEO-APEX-STANDBY.png",
+      "bytes": 39486,
+      "sha256": "e2021b4342cebeb91d07c99c46ea86fbe1fe79cf9afd4b641eff4d26424f465b"
+    },
+    {
+      "path": "docs/previews/VIDEO-NOVA-SPEAKING.png",
+      "bytes": 68268,
+      "sha256": "2bf808fa900996be502b5ca9e3bd433ef6339134444767925a02abf585707c39"
+    },
+    {
+      "path": "docs/previews/WEATHER-MOBILE-QA.png",
+      "bytes": 519392,
+      "sha256": "964b2b055e711ccd38563be24bcc8f3687cf974b96c16d74744584f20931b47e"
+    },
+    {
+      "path": "docs/previews/WEATHER-QA.png",
+      "bytes": 903911,
+      "sha256": "c311a7b1892f9ae9b4809826eb2440d91e0ded3f857f2437f6d10c7874556bf3"
+    },
+    {
+      "path": "docs/REALTIME-VOICE.md",
+      "bytes": 6061,
+      "sha256": "3d019204a7ba5363e4f32a2a7cff796cdc61dc5cc9220ebd8076bf4e5a6ee6b4"
+    },
+    {
+      "path": "docs/ReasoningWeb.reference.jsx.txt",
+      "bytes": 21306,
+      "sha256": "2e1d94f408c6d23fd37abdf6dfe1b87fb5ac9b2c38e5967b96ff8a6a87c20f64"
+    },
+    {
+      "path": "docs/references/nova-video/index.html",
+      "bytes": 1128,
+      "sha256": "7914638412d2f5fa6b84288469c93c292b7656eab748f333e71ca1a8727a76d6"
+    },
+    {
+      "path": "docs/references/nova-video/NOTES.md",
+      "bytes": 940,
+      "sha256": "2ec1795cef7b46e446a87e4913b6418cdfe8bf4363bfab3352e5923704a3a42f"
+    },
+    {
+      "path": "docs/references/nova-video/nova-motion.mp4",
+      "bytes": 6346766,
+      "sha256": "9ebea25d9a9b15916c19b814636c3bc4e6f07b95eae42b5f167d845cb536f638"
+    },
+    {
+      "path": "docs/SYSTEM-CHECK-SEQUENCE.md",
+      "bytes": 3702,
+      "sha256": "0cd45f3c661e9a3928090ea4d7c58a13e2cb21d6fef8cb6d5dad14f69c842155"
+    },
+    {
+      "path": "docs/TASK-LOOP.md",
+      "bytes": 2561,
+      "sha256": "2f106b196fbcc8cb15b608a67b4e84d6232ffd85836f31cb8ae23045df4321a0"
+    },
+    {
+      "path": "docs/TOOLS-IMPLEMENTED.md",
+      "bytes": 15557,
+      "sha256": "43bcffee774a3a09884ae4fdc058bfcbf01cd50847b8b42974ecc287cee3a030"
+    },
+    {
+      "path": "docs/VERCEL-DEPLOYMENT.md",
+      "bytes": 1565,
+      "sha256": "9e99bd7840c347049a90536a4724d55f87d5bcca02042e36484574257c63952b"
+    },
+    {
+      "path": "GEMINI-SETUP.md",
+      "bytes": 1696,
+      "sha256": "0a48911d5a19de64992251ca638b2ec0ad4897c7e99ebdadd47584181312bc3c"
+    },
+    {
+      "path": "HERMES-INTEGRATION.md",
+      "bytes": 9287,
+      "sha256": "bcdeb7c58b8ce0fdeeb09f81ce7a5e6c3e4966d57b72cd71db0d15f82a477b6f"
+    },
+    {
+      "path": "HISTORY-CALENDAR.md",
+      "bytes": 2288,
+      "sha256": "deef68d0b1dc45b0ed7c6813a0ec76b7978c975d8933c58dc663e2ad009f19fb"
+    },
+    {
+      "path": "lib/assistant-activity.mjs",
+      "bytes": 780,
+      "sha256": "a1f9a7ad59148e88b68cb6a477da7a11844da051b5e26f17bf66efd452b23058"
+    },
+    {
+      "path": "lib/browser-voice-session.mjs",
+      "bytes": 11486,
+      "sha256": "ebefccef06e04a0dfaeb202638011ff16261e8ffaa86433b71acf9a45d153396"
+    },
+    {
+      "path": "lib/check-presentation.mjs",
+      "bytes": 778,
+      "sha256": "ae8c841352def8ac584c1dbc9618e09ca1f815991d704a8e4858a8f67486c705"
+    },
+    {
+      "path": "lib/continuous-voice.mjs",
+      "bytes": 5032,
+      "sha256": "45f9d33878e3dedbe13b8a821d5562324b338ade86530f62c8e491fe0b879745"
+    },
+    {
+      "path": "lib/flux-capture.mjs",
+      "bytes": 7003,
+      "sha256": "a59f857682371790213fb0d286f2b64e274777f03b6bcf8b149dfbc087a89c4b"
+    },
+    {
+      "path": "lib/history-calendar.mjs",
+      "bytes": 178079,
+      "sha256": "d003b31b05f37669d9b4e660a6d056b870e46dc5c830442121c1e839693cd399"
+    },
+    {
+      "path": "lib/history-presentation.mjs",
+      "bytes": 923,
+      "sha256": "0565996353407ee1e41caaf013d19b725ad289b3d3b9796fcad82cd3af2e0a65"
+    },
+    {
+      "path": "lib/history-service.mjs",
+      "bytes": 3377,
+      "sha256": "caa34d87975549f263edac6ac6168953d898f45ea06b618f22d5d151acd83c3a"
+    },
+    {
+      "path": "lib/hud-response.mjs",
+      "bytes": 2710,
+      "sha256": "0e062e421d4fd6f0e85a9e3e86db49f22209072b79c09b8cbbf06729cc229ec1"
+    },
+    {
+      "path": "lib/json-stream.mjs",
+      "bytes": 960,
+      "sha256": "cf95fc239a9bc7098b27db7392103a3d9fc2a42078f779e8d565e48826114258"
+    },
+    {
+      "path": "lib/local-origin.mjs",
+      "bytes": 415,
+      "sha256": "454c10ef7f3d05b5482654a348d48d26844f23842d8400937fa74b3fd7755889"
+    },
+    {
+      "path": "lib/loops-config.mjs",
+      "bytes": 12496,
+      "sha256": "adb7d61fb3553d1168ec882f441b95547baafb93a5dbef2bf5278a0dcf73d004"
+    },
+    {
+      "path": "lib/node-registry.mjs",
+      "bytes": 7003,
+      "sha256": "3b9bda9849062a456a3b38900fdd96c0f8f795b84daca4276561da4451a4321c"
+    },
+    {
+      "path": "lib/original-horn.mjs",
+      "bytes": 9222,
+      "sha256": "2e46a728b2fab594cdf23d6b60c6e271083952a83f3c2a4eb7a21c301c2359bb"
+    },
+    {
+      "path": "lib/personality.mjs",
+      "bytes": 6866,
+      "sha256": "563e757e16056e8c2a40a5d9acaba280b1a21bfad57b7f484756c34fae6d7534"
+    },
+    {
+      "path": "lib/realtime-conversation.mjs",
+      "bytes": 3734,
+      "sha256": "6d543263d7e02f0c3d28c9c7bfcd8dde3ea149919fc31a05a8a0ef1a34b0a8be"
+    },
+    {
+      "path": "lib/runtime-proxy.ts",
+      "bytes": 2945,
+      "sha256": "3076824452e329629cad6ec605a1fbafb5f48042b1f8c388ff1c9860fbabd018"
+    },
+    {
+      "path": "lib/spoken-text.mjs",
+      "bytes": 539,
+      "sha256": "7c634e59629db5814f317ddbd0496171d81a22f73d3010c231848542b054c955"
+    },
+    {
+      "path": "lib/system-check-sounds.mjs",
+      "bytes": 5716,
+      "sha256": "25057b04108930749fc6ce1f484cf328b03f5bd0373b2f47a934d1d2b6fe6ef5"
+    },
+    {
+      "path": "lib/system-check.mjs",
+      "bytes": 2392,
+      "sha256": "2b3e6d71457322153899d1ecbb4b1141f5dcd49e38e5ce8413f6c38d2282908a"
+    },
+    {
+      "path": "lib/voice-controller.mjs",
+      "bytes": 6917,
+      "sha256": "9d31f033a486c455e9acc200e5247bf48375a785a596fb2100177f2405101f39"
+    },
+    {
+      "path": "lib/voice-indicator.mjs",
+      "bytes": 1349,
+      "sha256": "c0391c22cc9434f2f442aed76f69bd53fdada9576bc91faf760c2ee3133924ee"
+    },
+    {
+      "path": "lib/wake-gate.mjs",
+      "bytes": 750,
+      "sha256": "1c59e4800a0c3fae7ca64483e14a8b13dabbae527ead4106bde5f523ecc3e7b6"
+    },
+    {
+      "path": "lib/wake-phrase.mjs",
+      "bytes": 818,
+      "sha256": "b8f6795e253e3f6d67aca9c2a5b5b43f1e0ac292915348368633e4b11dc2bbf4"
+    },
+    {
+      "path": "lib/weather-service.mjs",
+      "bytes": 3501,
+      "sha256": "b122932bc4f7ff1c4a9f7e3b6474cc9d90e4ef6da75c4d2b0f1c7fa40c49fba6"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1095,
+      "sha256": "03596b3a485143664e6dc19bd1b1d22d32131b624628e072d2279c4297e2a108"
+    },
+    {
+      "path": "next.config.mjs",
+      "bytes": 92,
+      "sha256": "1e3206cb200e264fdddb4dbb2e4772daebc839fdbc94b78316d74892a0de6fa2"
+    },
+    {
+      "path": "NOVA-README.md",
+      "bytes": 4982,
+      "sha256": "c67012f1a0a3290f58c0bca269ee469514f5cb2796262569a47eedd33fad92c0"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 207058,
+      "sha256": "ad5c03da78ef08bc668a4394ad13d24bb201a8a55599befe34e2a58f2dbbdf8e"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1092,
+      "sha256": "582a16bc2d48a1a472af6c4425e5a8f4628c2172a3e5818fa215172ba0489243"
+    },
+    {
+      "path": "public/apex-pcm-worklet.js",
+      "bytes": 1796,
+      "sha256": "62b1f1507c8cb770ee7d0c4e89255a359ed016a8ce4a8c17a61e2a9be0d33588"
+    },
+    {
+      "path": "public/humanoid/apex-entity.html",
+      "bytes": 5153291,
+      "sha256": "31ce6694ebe80cf781cee2000d0d431a42dd435be51ef62b755f2bf006628d9f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 14853,
+      "sha256": "1ff084bdc2d90a926888481e54300cb0d810f7c352f2c7a48ff68fbf1966b3bf"
+    },
+    {
+      "path": "runtime/agent-execution.mjs",
+      "bytes": 18947,
+      "sha256": "533b7331c056fd01426afe0c6f8ff4afaf68a206721aafb81c7bcf13d5b49792"
+    },
+    {
+      "path": "runtime/apex-voice.mjs",
+      "bytes": 5776,
+      "sha256": "6e2a2f652281388536757020794552b6e69114a314c677fafb754fa203baf563"
+    },
+    {
+      "path": "runtime/browser-tools.mjs",
+      "bytes": 4386,
+      "sha256": "f8f1f5500a178054d0bff1e0650ffca9a33b37e73e6bdf3b4fa59cbb13e0ff59"
+    },
+    {
+      "path": "runtime/configure-hermes.mjs",
+      "bytes": 3481,
+      "sha256": "de9bc28e7fd5a72a14ef16b67bbcf71d3d7f170d47b8908e5198e661426391fe"
+    },
+    {
+      "path": "runtime/connect-google.mjs",
+      "bytes": 4104,
+      "sha256": "56b0b27f0ffc3fe56ac5e5e72be1c1a7bca62befbc341699971c30f97beb20b2"
+    },
+    {
+      "path": "runtime/conversation-routing.mjs",
+      "bytes": 4601,
+      "sha256": "878e2a1d3f22b1072931ba418d8f086db252a0a50164e7b13e324e904023cc5e"
+    },
+    {
+      "path": "runtime/desktop-automation.mjs",
+      "bytes": 14187,
+      "sha256": "54611f81d0415c83118bd1ece601cf9678d4e1db6f76f07ce11270888885d3e6"
+    },
+    {
+      "path": "runtime/diagnostics.mjs",
+      "bytes": 7154,
+      "sha256": "03579e31c2bbe645b706c96f89696aeee901eb036378d495b4b5431ea70a9c8a"
+    },
+    {
+      "path": "runtime/engine.mjs",
+      "bytes": 37982,
+      "sha256": "2134ae284a45645f7566f26d9ed39153aeb364f9b2902afaa6e39764d0161172"
+    },
+    {
+      "path": "runtime/file-tools.mjs",
+      "bytes": 4728,
+      "sha256": "33c0e29ca94f8a179f6362c78a3c3e30731b3b22e8e3cf5d6cf916dbebeede90"
+    },
+    {
+      "path": "runtime/fish-voice.mjs",
+      "bytes": 2943,
+      "sha256": "dc75563c38791263eec97e81259e6a0ccea755474451347314f84fe3142b3c0c"
+    },
+    {
+      "path": "runtime/google-tools.mjs",
+      "bytes": 8045,
+      "sha256": "d61daba3674960f86c2253946218668886d200e3519d671cbf1ce060652ed5c0"
+    },
+    {
+      "path": "runtime/hermes-adapter.mjs",
+      "bytes": 11123,
+      "sha256": "650440811bfa48a4ecc1f7106609d1b50a3129e402e66e37ce12b3d4fd7ec321"
+    },
+    {
+      "path": "runtime/hermes-model-gateway.mjs",
+      "bytes": 5325,
+      "sha256": "55463845092c2ff640c0e35f5ed8f732e6e4c1be24c195ae6517d6b727419b6b"
+    },
+    {
+      "path": "runtime/inference-scheduler.mjs",
+      "bytes": 3122,
+      "sha256": "a9f65e214ef1a8c14736329b8c8e67b38906d8f3f9ed30ece995266b90d3e5f3"
+    },
+    {
+      "path": "runtime/launch.mjs",
+      "bytes": 2304,
+      "sha256": "7ca1117393d6ec0fdcf19af884ad292401e8dcaa5815b63b9f37361fe74e2dbb"
+    },
+    {
+      "path": "runtime/local-voice.mjs",
+      "bytes": 722,
+      "sha256": "8b86bb18f93b3b7c7d24abbe06218fa437f169be73d70b0e18e83573f9b833f7"
+    },
+    {
+      "path": "runtime/loop-observers.mjs",
+      "bytes": 2060,
+      "sha256": "bb5eefc580cab3a1bc0daf7e9e053d6d786efcf33622141244046b7affafd2d0"
+    },
+    {
+      "path": "runtime/loops-engine.mjs",
+      "bytes": 35560,
+      "sha256": "67503cb2832546bb1411cfb690a48f895fef327d48665e539c9f38a5c89acbf2"
+    },
+    {
+      "path": "runtime/node-tools.mjs",
+      "bytes": 11966,
+      "sha256": "90c4c9859d45eedcbf0736cdb3fbdc7102e3d4d41d68c8227ee2828f837da9c1"
+    },
+    {
+      "path": "runtime/provider.mjs",
+      "bytes": 10023,
+      "sha256": "420f82b6903d90326259b24c6dddbcf026f8d961a171cca31303bffdfe5484fa"
+    },
+    {
+      "path": "runtime/server.mjs",
+      "bytes": 12388,
+      "sha256": "5fc337164d705d61653761960279b15c97e8e50cfd741e14307a316277da63ec"
+    },
+    {
+      "path": "runtime/setup_voice.py",
+      "bytes": 849,
+      "sha256": "c90ed7eba29e40529837e943e3392b3393b59dd3fca6228faff7f772d7e30eb4"
+    },
+    {
+      "path": "runtime/store.mjs",
+      "bytes": 1251,
+      "sha256": "795a3fa7d5c6cfd345b3a465fecc988628f1bb564e879e3648c3a95204bdee88"
+    },
+    {
+      "path": "runtime/system-tools.mjs",
+      "bytes": 1512,
+      "sha256": "02c18c76c7de085aa2bc3755ed80129412109f7e5c1da72a927a85d082dca157"
+    },
+    {
+      "path": "runtime/task-loop.mjs",
+      "bytes": 8312,
+      "sha256": "5bb8f10e9b501d863884f3ac1a6d74adc4a87d42cf99fb5b1f8e740758123a71"
+    },
+    {
+      "path": "runtime/tool-registry.mjs",
+      "bytes": 15725,
+      "sha256": "669605207af8dadf944b6a6aabeb60b6a89171dc64e02f2bf1510819fc6b0056"
+    },
+    {
+      "path": "runtime/training.mjs",
+      "bytes": 1341,
+      "sha256": "647e1648e6bbdd2ca4807dd006d53053e0b3be30878597d00d9371bc84894bf8"
+    },
+    {
+      "path": "runtime/voice-requirements.txt",
+      "bytes": 121,
+      "sha256": "1940e0883624dc956060eb3c0df430364bce5068be96d9d66d056be00d2ba0f0"
+    },
+    {
+      "path": "runtime/voice_service.py",
+      "bytes": 3676,
+      "sha256": "55d49309040964f7c9f7a352bc33e70d447f211983fa5abe5ebf28d3441eb853"
+    },
+    {
+      "path": "runtime/web-tools.mjs",
+      "bytes": 6198,
+      "sha256": "52b21d59e09a9a8df43e8ba8fd38add4a503917b6f6fa9b4c52e328f0a2bba7f"
+    },
+    {
+      "path": "runtime/windows-tools.ps1",
+      "bytes": 6167,
+      "sha256": "0a258c614a547f6ae4aa5d8987398d1006a281a6d96ca0f7c3028b10afb2800f"
+    },
+    {
+      "path": "runtime/youtube-controller.mjs",
+      "bytes": 6433,
+      "sha256": "a34fc88196ccd84b1b913fe5bd073d01eccc42b23c39ea122c5ed0b6b3523997"
+    },
+    {
+      "path": "scripts/check-gemini-config.mjs",
+      "bytes": 1279,
+      "sha256": "e17c8027f617db05b4670e0fd871fcf4922e2b947ec801dbaba69ec8939086b2"
+    },
+    {
+      "path": "scripts/import-history-calendar.mjs",
+      "bytes": 3750,
+      "sha256": "b276872f850914dc8bac3403bdbb657d064e16b8b5fdabd965edf3e8bb4e507c"
+    },
+    {
+      "path": "scripts/import-humanoid.mjs",
+      "bytes": 5552,
+      "sha256": "4fc5b84879d21bb798a7612680a2de8c27a7970dbf53626e1036a5f59d2c7b41"
+    },
+    {
+      "path": "Start-Hermes.bat",
+      "bytes": 208,
+      "sha256": "69399564f01475f67ecff290f9d7dd5bb5608664f4e6f73fbee4cf0bab2f4ed3"
+    },
+    {
+      "path": "Start.bat",
+      "bytes": 932,
+      "sha256": "fa2362144f84f55fe5ebfb49528a8ac75b5b4adcc0c7f39bcf0ad34e9f1f93b0"
+    },
+    {
+      "path": "tests/apex-voice.test.mjs",
+      "bytes": 9577,
+      "sha256": "0e62fdc82b1a6567295461d447ca3d796e180114a1e467ba6684a8054d89eccc"
+    },
+    {
+      "path": "tests/assistant-activity.test.mjs",
+      "bytes": 2015,
+      "sha256": "4ac90ca9043cb95a5e4525771468069753c717fa4d2a729fabe6ef3e11ef28bd"
+    },
+    {
+      "path": "tests/background-conversation.test.mjs",
+      "bytes": 6410,
+      "sha256": "a288b465561a7839bd42a3cc3690ca07a6ba1adf5a468850512a967e4272b47b"
+    },
+    {
+      "path": "tests/background-local.integration.mjs",
+      "bytes": 1730,
+      "sha256": "13d6b2a4626e003d3eea23c71ff98d256e78e3c1f0ba121a3237c28cf9e15d7f"
+    },
+    {
+      "path": "tests/browser-voice-session.test.mjs",
+      "bytes": 14310,
+      "sha256": "d3203f4aead11ec80420b1e46aa4c23571456191f9f2cbca38714744161851b1"
+    },
+    {
+      "path": "tests/continuous-voice.test.mjs",
+      "bytes": 6370,
+      "sha256": "81913cd43a135040fc52ffbb96ec354fd1cade65de93c0999141646562cf3b86"
+    },
+    {
+      "path": "tests/conversation-routing.test.mjs",
+      "bytes": 1998,
+      "sha256": "4e5494f7dc8a4071cef1b3c0d698e9682d9f1675e927a75169849f262086605e"
+    },
+    {
+      "path": "tests/desktop-automation.test.mjs",
+      "bytes": 7158,
+      "sha256": "c13191713f74eda357291e8b5d9cfbec44663f9262ff2a76ed0eb9de9a32c47d"
+    },
+    {
+      "path": "tests/diagnostics.test.mjs",
+      "bytes": 3271,
+      "sha256": "cd9c88618ff0748e5dca2395f68536c12b05a660fe5cf0abdcf0026ed51063ab"
+    },
+    {
+      "path": "tests/fish-voice.test.mjs",
+      "bytes": 3243,
+      "sha256": "90d5a80d087e2cbc9c84a9d082a094011c4dc38a2f486ebcb0af322b38b83954"
+    },
+    {
+      "path": "tests/gemini-brain.test.mjs",
+      "bytes": 2972,
+      "sha256": "3e7592a76f8f19f8dc4c22685be87d81a8cd0ec1714d5af9448b1accc516baa9"
+    },
+    {
+      "path": "tests/google-tools.test.mjs",
+      "bytes": 4154,
+      "sha256": "b1730b0cd3b0c4eea9374ac86603b9fcc520d1e7a53e4eb015f28b7ec0d09def"
+    },
+    {
+      "path": "tests/hermes-model-live.integration.mjs",
+      "bytes": 3717,
+      "sha256": "93fe3c3d840dc4024d85c0075711c57d9d994f1614ae69ba2f0c89060ff0c737"
+    },
+    {
+      "path": "tests/hermes.test.mjs",
+      "bytes": 11248,
+      "sha256": "51238c2cbf996eeba26de90e43572cf18e6cb4f0e61b220ab4f73377dd02a718"
+    },
+    {
+      "path": "tests/history.test.mjs",
+      "bytes": 5014,
+      "sha256": "fee7aee6abf518c399f34bab1dcbe84824ca065a32a765fcbbf020a6cd0ea15f"
+    },
+    {
+      "path": "tests/http.integration.mjs",
+      "bytes": 11946,
+      "sha256": "33206f2499df845d5ff7a0d51efff941bd0a102c4933c3c106ee28b603b58429"
+    },
+    {
+      "path": "tests/hud-response.test.mjs",
+      "bytes": 4501,
+      "sha256": "f0c31fd76ad8ac87869681b77894fca4e8a2f40a4b246807fabaa155e66b4549"
+    },
+    {
+      "path": "tests/humanoid-ui-fixture.mjs",
+      "bytes": 9669,
+      "sha256": "159ecef72fc79411dd425057437b41c334853d0efd138678f05fe32c555470dd"
+    },
+    {
+      "path": "tests/inference-scheduler.test.mjs",
+      "bytes": 5481,
+      "sha256": "35cfd0e7775994b3d8199f3ef45f9b63fd997764c5bbb818224b8bd67773f2d6"
+    },
+    {
+      "path": "tests/local-brain.test.mjs",
+      "bytes": 2966,
+      "sha256": "23e12833e816ebfcbced2b60eec5f69a584140a37daa1b3d79063c838ae88d47"
+    },
+    {
+      "path": "tests/local-live.integration.mjs",
+      "bytes": 2390,
+      "sha256": "99928c732394632df44d1e75c163f4db359fb71352ee88e69ee6c099def597ce"
+    },
+    {
+      "path": "tests/loops.test.mjs",
+      "bytes": 16733,
+      "sha256": "dc95e83325d4c013de098092cfabcbd77023caedf78d05b8cb16f2e0fadb476c"
+    },
+    {
+      "path": "tests/nodes-live.integration.mjs",
+      "bytes": 3839,
+      "sha256": "ebcf553055311348906c911778ab7841fb25a2e2b9898eb6746bf36b58c4c837"
+    },
+    {
+      "path": "tests/nodes.test.mjs",
+      "bytes": 12182,
+      "sha256": "2e48b12f45b61d6fd035abec85b37ebfd34ad70d71d0630a0fff581d9687275d"
+    },
+    {
+      "path": "tests/nova-audio.test.mjs",
+      "bytes": 1212,
+      "sha256": "8ce78a22b339be2ff2374db4a4549aa526560a4e8f5a534d060092c4bd434d44"
+    },
+    {
+      "path": "tests/nova-motion.test.mjs",
+      "bytes": 1618,
+      "sha256": "db5d2821897e5a702db29eadd7bf739a3588d8952d98f83316144234149a37d9"
+    },
+    {
+      "path": "tests/original-horn.test.mjs",
+      "bytes": 2288,
+      "sha256": "f1633e6b25801af4771ce2680a6908fdec0540b1fc8769ecaf901a0ce2268e65"
+    },
+    {
+      "path": "tests/personality.test.mjs",
+      "bytes": 6479,
+      "sha256": "03cb8116a46ffc34bbbca49304b64ff430232fd49d36593f1612d153b18671bd"
+    },
+    {
+      "path": "tests/realtime-conversation.test.mjs",
+      "bytes": 6705,
+      "sha256": "6163f2ed42873b321f53d62bb6544782eff29918244e473e369702963884857a"
+    },
+    {
+      "path": "tests/registered-tools.test.mjs",
+      "bytes": 8802,
+      "sha256": "5b6521e8015b30ee4becd6990fd3783ae79690bfa55ba6b1e424f1e244498113"
+    },
+    {
+      "path": "tests/runtime.test.mjs",
+      "bytes": 19066,
+      "sha256": "3ec37ee9d5a6191c23c0ff7664cb7a9b527be8799c1e766b73192173ed2ad77b"
+    },
+    {
+      "path": "tests/system-check-audio.test.mjs",
+      "bytes": 1597,
+      "sha256": "9ce8af6226302c724ff8dfd585921ea496579b4b48608d430d2ebb1641c5fd4f"
+    },
+    {
+      "path": "tests/system-check.test.mjs",
+      "bytes": 3240,
+      "sha256": "cd1f6e58a3641c76c191f5adb87e752aecbe8d91134b939187323fd7ae600d4a"
+    },
+    {
+      "path": "tests/task-loop.test.mjs",
+      "bytes": 8024,
+      "sha256": "300783709f0fb585a7ea6af33dac5735a60d108e7220f6a71fdc465e31e630e9"
+    },
+    {
+      "path": "tests/VERIFICATION.md",
+      "bytes": 5896,
+      "sha256": "015c72fb3c02add6957ced1c9b2d4fbb8bcc94ef00f272543ee7f04086402933"
+    },
+    {
+      "path": "tests/voice-indicator.test.mjs",
+      "bytes": 2881,
+      "sha256": "afca78c8e55ad8b38ab13830229c08da39851a98a945cd39c8c958e90d33265c"
+    },
+    {
+      "path": "tests/voice.test.mjs",
+      "bytes": 2825,
+      "sha256": "aad87bb156bd445fa13291ca742e75d600fb9c155a459315f9beffc1113041b8"
+    },
+    {
+      "path": "tests/wake-gate.test.mjs",
+      "bytes": 1132,
+      "sha256": "8cc7883c72ccc763b0f76e8149bb97bde11f1a447fd9b70484d6bd330c1c1f6a"
+    },
+    {
+      "path": "tests/weather.test.mjs",
+      "bytes": 2218,
+      "sha256": "971109d3e7ac2b96d228c93d430b61af3e6a3eba8d6c50d858979e46b1f0daae"
+    },
+    {
+      "path": "tests/youtube-controller.test.mjs",
+      "bytes": 4978,
+      "sha256": "d3ae7614d7968a5909a0c3314de8d31864264e8a4bfcaafc99c98cf0a3d2a181"
+    },
+    {
+      "path": "training/train_lora.py",
+      "bytes": 2913,
+      "sha256": "305627ca8328003e65831485ecb90641a60c2d949a95003176e425e4b9a74a66"
+    },
+    {
+      "path": "TRANSFER-TO-ANOTHER-PC.md",
+      "bytes": 2551,
+      "sha256": "f4be27423b2b9af6ed5b0c745f1ab59c4adc522f82bb1cd598cbab3cdf62abd2"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 562,
+      "sha256": "1519b3e409b0059442adaf1c0c663021214e914c0f80b40cbba705e378aa4537"
+    },
+    {
+      "path": "vercel.json",
+      "bytes": 202,
+      "sha256": "5d9eac0c6ac723bf9459e01c0c79b833efeb3bc567c5522d2fb13492d33acd64"
+    }
+  ]
+}

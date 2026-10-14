@@ -1,0 +1,12 @@
+.env
+.env.*
+.apex-data/
+.next/
+node_modules/
+.git/
+training/
+tests/
+*.sqlite*
+*.log
+*.tsbuildinfo
+Start*.bat

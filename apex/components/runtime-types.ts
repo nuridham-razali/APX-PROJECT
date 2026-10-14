@@ -1,0 +1,13 @@
+export type Diagnostic = { id: string; state: string; passed?: number; summary?: string; checks: { id: string; label: string; state: string; detail: string }[] };
+export type Step = { id: string; name?: string; agent?: string; instruction?: string; state?: string; output?: string; acceptance?: string[]; attempts?: number; checks?: { passed: boolean; feedback: string; attempt: number; checkedAt: string; method: string }[] };
+export type Workflow = { id: string; name: string; source: string; steps: Step[]; version: number };
+export type Task = { id: string; status?:string; conversationId?:string; assistant?: 'APEX' | 'NOVA'; request: string; state: string; progress: string; error: string; result: string; createdAt: string; startedAt?: string; completedAt?: string; acknowledged: boolean; steps: Step[]; mode?: string; loopStage?: string; loopCalls?: number; loopLimits?: { steps: number; attemptsPerStep: number; providerCalls: number } };
+export type Memory = { id: string; text: string; source: string; createdAt: string };
+export type NodeEvent={id:string;node:string;state:string;taskId?:string;kind?:string;tool?:string;from?:string;to?:string;summary:string;result?:string;error?:string};
+export type RuntimeState = { tools?: {name:string;node:string;description:string;approval:boolean;status:string}[]; hermes?: {enabled:boolean;configured:boolean;state:string;tools:string[];detail:string}; taskNotifications?:{id:string;taskId:string;conversationId:string;text:string;state:string}[]; loops?:unknown[];loopNotifications?:{id:string;text:string;spoken:boolean;audioClaimed:boolean;deferred:boolean;dismissed:boolean}[]; nodes?:{id:string;state:string;connection:string;taskId?:string;summary:string;result?:string;error?:string}[];nodeEvents?:NodeEvent[];approvals?:{id:string;node:string;summary:string}[];checks?: Diagnostic | null; configured: boolean; provider?: string; trainingExamples?: number; model: string; activeTask: string | null; activeTasks?: string[]; backgroundConcurrency?: number; inference?: { conversationPriority: boolean; limit: number; backgroundLimit: number; activeForeground: number; activeBackground: number; waitingForeground: number; waitingBackground: number } | null; agents: { id: string; name: string; capability: string }[]; tasks: Task[]; workflows: Workflow[]; memory: Memory[]; voice: string; externalActions: string };
+export async function runtimeAction(path: string, body: object) {
+  const response = await fetch(`/api/runtime/${path}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.error || 'APEX could not complete this action.');
+  return data;
+}

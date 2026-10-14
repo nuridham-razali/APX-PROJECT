@@ -1,0 +1,18 @@
+.wake-voice-indicator{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:12;display:flex;align-items:center;gap:10px;height:34px;padding:0 10px;background:linear-gradient(110deg,#171309dd,#06141bdd);border:1px solid #c5a45a66;border-radius:22px;box-shadow:0 0 18px #34cbe512,inset 0 0 14px #dfb4570c;backdrop-filter:blur(12px);color:#aee8f0;animation:wake-voice-in .2s ease-out;transition:opacity .6s ease;}
+.wake-voice-indicator[data-status=OFF],.wake-voice-indicator[data-status=PAUSED]{opacity:.72}
+.wake-voice-indicator[data-stage=fading]{opacity:0;pointer-events:none}
+.hud-preview .wake-voice-restore{position:absolute;top:50%;right:14px;z-index:12;display:grid;place-items:center;width:28px;height:28px;padding:0;border:1px solid #c5a45a44;border-radius:50%;background:#06141b99;color:#ecc878;opacity:.45;cursor:pointer;transition:opacity .2s}.hud-preview .wake-voice-restore:hover,.hud-preview .wake-voice-restore:focus-visible{opacity:1}
+.wake-voice-name{display:flex;align-items:center;gap:5px;font:8px var(--font-mono),monospace;letter-spacing:1.4px;color:#ecc878;white-space:nowrap}
+.wake-voice-wave{width:74px;height:24px;overflow:visible;--voice-level:0;filter:drop-shadow(0 0 3px #78dcf255)}
+.wake-voice-wave rect{fill:#73d8ed;transform-origin:center;transform-box:fill-box;transform:scaleY(calc(.18 + var(--voice-level)*1.8));transition:transform .1s ease;}
+.wake-voice-wave rect:nth-child(3n){fill:#e4be6e}
+.wake-voice-indicator[data-input-active=true] .wake-voice-wave rect{animation:wake-input-wave .65s ease-in-out infinite alternate}
+@keyframes wake-input-wave{from{transform:scaleY(.3)}to{transform:scaleY(1)}}
+.wake-voice-status{font:7px var(--font-mono),monospace;letter-spacing:1px;min-width:50px;color:#b8dce4;text-align:center;white-space:nowrap}
+.hud-preview .wake-voice-indicator button{width:18px;height:18px;padding:0;display:grid;place-items:center;background:transparent;border:0;border-radius:50%;color:#95abb3;cursor:pointer;}
+.hud-preview .wake-voice-indicator .wake-voice-mic{color:#ecc878;border:1px solid #c5a45a55;border-radius:50%;}
+.wake-voice-indicator[data-status=SPEAKING]{border-color:#e2bf73a6;box-shadow:0 0 18px #d2ab4522}
+@keyframes wake-voice-in{from{opacity:0;translate:0 -5px}to{opacity:1;translate:0 0}}
+.hud-preview:has(.wake-voice-indicator) .hud-preview-state{visibility:hidden}
+@media(max-width:700px){.wake-voice-indicator{top:52px;gap:7px;height:30px;padding:0 8px}.wake-voice-wave{width:58px}.wake-voice-status{font-size:6px}}
+@media(prefers-reduced-motion:reduce){.wake-voice-indicator{animation:none;transition:opacity .2s ease}.wake-voice-indicator .wake-voice-wave rect{animation:none;transition:none}}
